@@ -16,7 +16,6 @@ import {FlagIcon} from "./svg/FlagIcon.tsx";
 export const Home = () => {
     return (
         <>
-            <MenuComponent/>
             <div className={"home-container"}>
                 <div className="min-h-[100vh] flex items-center">
                     {/* Optional empty space on the left */}
