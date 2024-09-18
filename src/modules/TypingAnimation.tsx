@@ -6,7 +6,14 @@ const TypingAnimation: React.FC = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    const wordList = ['Student', 'Full Stack Developer']; // Words to loop through
+    const age = () => {
+        if (new Date().getMonth() > 4 || (new Date().getMonth() === 4 && new Date().getDate() >= 20)) {
+            return new Date().getFullYear() - 2003;
+        }
+        return new Date().getFullYear() - 2003 - 1;
+    }
+
+    const wordList = ['a Student', 'a Full Stack Developer', age().toString()]; // Words to loop through
 
     useEffect(() => {
         const handleTyping = () => {
@@ -38,10 +45,10 @@ const TypingAnimation: React.FC = () => {
     }, [displayText, isDeleting, loopNum, typingSpeed, wordList]);
 
     return (
-        <h1 className="text-3xl">
+        <>
             I am <span className={"text-blue-700"}>{displayText}</span>
             <span className="blinking-cursor"></span>
-        </h1>
+        </>
     );
 };
 

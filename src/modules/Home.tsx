@@ -89,7 +89,7 @@ export const Home = () => {
                                 {/* Description Section */}
                                 <Card className="w-full shadow-none bg-white m-2">
                                     <CardHeader>
-                                        <h1 className="text-xl font-semibold"><TypingAnimation/></h1>
+                                        <h1 className="font-semibold text-3xl"><TypingAnimation/></h1>
                                     </CardHeader>
                                     <CardBody>
                                         <div className="text-md text-left pl-2">
