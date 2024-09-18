@@ -15,9 +15,17 @@ export const FormationComponent = () => {
                     <CardBody className="space-y-4">
                         <div className="flex items-center space-x-3">
                             <FlagIcon className={"w-[30px] h-[30px]"}/>
-                            <p className="text-gray-600">
-                                I am a student at Polytech Nice Sophia and a Full Stack Developer
-                            </p>
+                            <div>
+                                <p className="text-gray-600">
+                                    I am a student at Polytech Nice Sophia and a Full Stack Developer.
+                                </p>
+                                <p className="text-gray-600">
+                                    Apprentice at Airbus Defense and Space, responsible for software development.
+                                </p>
+                                <p>
+                                    Im currently looking for an opportunity to work as a intern in software development.
+                                </p>
+                            </div>
                         </div>
                     </CardBody>
                     <CardFooter className={"flex"}>

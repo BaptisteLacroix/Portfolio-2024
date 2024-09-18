@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 
-.home-container {
-    background-image: url('/public/home-shape.png');
+html {
+    background-image: url('/public/home-shape.svg');
+    background-attachment: fixed;
 }
 
 .blinking-cursor {

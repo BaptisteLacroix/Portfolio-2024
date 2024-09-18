@@ -7,7 +7,6 @@ import {
     CardHeader, Divider,
 } from "@nextui-org/react";
 import TypingAnimation from "./TypingAnimation.tsx";
-import {MenuComponent} from "./MenuComponent.tsx";
 import {EmailIcon} from "./svg/EmailIcon.tsx";
 import {LanguageIcon} from "./svg/LanguageIcon.tsx";
 import {FlagIcon} from "./svg/FlagIcon.tsx";
@@ -65,20 +64,20 @@ export const Home = () => {
                                     <Divider className="my-3 opacity-50"/>
                                     <CardBody className="space-y-4">
                                         <div className="flex items-center space-x-3">
-                                            <EmailIcon className={"w-[30px] h-[30px]"} />
+                                            <EmailIcon className={"w-[30px] h-[30px]"}/>
                                             <p className="text-gray-600">
                                                 <strong className="text-gray-800">Email:</strong> mail@mail.com
                                             </p>
                                         </div>
                                         <div className="flex items-center space-x-3">
-                                          <LanguageIcon className={"w-[30px] h-[30px]"} />
+                                            <LanguageIcon className={"w-[30px] h-[30px]"}/>
                                             <p className="text-gray-600">
                                                 <strong className="text-gray-800">Languages:</strong> French | English -
                                                 TOEIC (815)
                                             </p>
                                         </div>
                                         <div className="flex items-center space-x-3">
-                                          <FlagIcon className={"w-[30px] h-[30px]"} />
+                                            <FlagIcon className={"w-[30px] h-[30px]"}/>
                                             <p className="text-gray-600">
                                                 <strong className="text-gray-800">Nationality:</strong> French |
                                                 Canadian Citizen
@@ -86,7 +85,6 @@ export const Home = () => {
                                         </div>
                                     </CardBody>
                                 </Card>
-
 
                                 {/* Description Section */}
                                 <Card className="w-full shadow-none bg-white m-2">
