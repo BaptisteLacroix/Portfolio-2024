@@ -21,10 +21,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.10
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
   deploy:
     name: Deploy to GitHub Pages
@@ -44,13 +44,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.10
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Build project
-        run: yarn build --outDir build
+        run: npm build --outDir build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.3
