@@ -71,7 +71,7 @@ export const Home = () => {
                                                 Hire Me!
                                             </a>
                                         </Button>
-                                        <DownloadCVComponent />
+                                        <DownloadCVComponent variant={"bordered"} />
                                     </div>
                                 </CardFooter>
                             </Card>
@@ -109,7 +109,7 @@ export const Home = () => {
                                                 <LanguageIcon className={"w-[30px] h-[30px]"} />
                                                 <p className="text-gray-600">
                                                     <strong className="text-gray-800">Languages:</strong>{" "}
-                                                    French | English - TOEIC (815)
+                                                    French | English - B2 - TOEIC (815)
                                                 </p>
                                             </div>
                                             <div className="flex items-center space-x-3">

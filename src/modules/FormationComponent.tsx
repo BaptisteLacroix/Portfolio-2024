@@ -1,7 +1,8 @@
-import {Card, CardHeader, CardBody, Button, CardFooter, Divider} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, CardFooter, Divider} from "@nextui-org/react";
 import {FlagIcon} from "./icons/personalDetailsIcons/FlagIcon.tsx";
 import {ExperienceList} from "./ExperienceCard.tsx";
 import React from "react";
+import {DownloadCVComponent} from "./DownloadCVComponent.tsx";
 
 export const FormationComponent: React.FC = () => {
     return (
@@ -29,7 +30,7 @@ export const FormationComponent: React.FC = () => {
                         </div>
                     </CardBody>
                     <CardFooter className={"flex"}>
-                        <Button color="primary">Download CV</Button>
+                        <DownloadCVComponent variant={"solid"} />
                     </CardFooter>
                 </Card>
             </div>
