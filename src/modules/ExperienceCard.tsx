@@ -52,8 +52,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, d
                 </div>
 
                 {/* Content Section */}
-                <CardBody className={`${isOdd ? "pr-16 text-right" : "pl-16"}`}>
-                    <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
+                <CardBody className={`${isOdd ? "lg:pr-16 text-right" : "lg:pl-16"}`}>
+                    <h2 className="text-2xl font-semibold text-gray-800 mt-4 max-lg:mt-5 ">{title}</h2>
                     <p className="text-md text-gray-600">{company}</p>
                     <p className="text-gray-500 mt-2">{description}</p>
                 </CardBody>
@@ -70,9 +70,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, d
 
 export const ExperienceList: React.FC = () => {
     return (
-        <div className="flex flex-col items-center justify-center p-6 w-full">
+        <div className="flex flex-col items-center justify-center p-4 w-full lg:p-6">
             <ExperienceCard
-                icon={<PolytechIcon />}
+                icon={<PolytechIcon/>}
                 title="Polytech Nice Sophia"
                 company="Master's degree - In computer engineering"
                 description="Studying computer engineering at Polytech Nice Sophia, specializing in software engineering."
