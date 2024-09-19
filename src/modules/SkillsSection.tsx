@@ -1,50 +1,51 @@
-import {Pagination} from "@nextui-org/react";
+import { Pagination } from "@nextui-org/react";
 import SkillCard from "./SkillCard";
-import React, {useState} from "react";
-import {JavaIcon} from "./icons/languages/JavaIcon.tsx";
-import {PythonIcon} from "./icons/languages/PythonIcon.tsx";
-import {AndroidIcon} from "./icons/languages/AndroidIcon.tsx";
-import {ReactIcon} from "./icons/languages/ReactIcon.tsx";
-import {JavascriptIcon} from "./icons/languages/JavascriptIcon.tsx";
-import {TypescriptIcon} from "./icons/languages/TypescriptIcon.tsx";
-import {PHPIcon} from "./icons/languages/PHPIcon.tsx";
-import {HtmlIcon} from "./icons/languages/HtmlIcon.tsx";
-import {CssIcon} from "./icons/languages/CssIcon.tsx";
-import {CIcon} from "./icons/languages/CIcon.tsx";
-import {LuaIcon} from "./icons/languages/LuaIcon.tsx";
-import {FlaskIcon} from "./icons/languages/FlaskIcon.tsx";
-import {SpringBoot} from "./icons/languages/SpringBoot.tsx";
-import {GitlabIcon} from "./icons/languages/GitlabIcon.tsx";
-import {GitIcon} from "./icons/languages/GitIcon.tsx";
-import {DockerIcon} from "./icons/languages/DockerIcon.tsx";
-import {MongoDBIcon} from "./icons/languages/MongoDBIcon.tsx";
-import {MysqlIcon} from "./icons/languages/MysqlIcon.tsx";
-import {PostgreSQLIcon} from "./icons/languages/PostgreSQLIcon.tsx";
-import {SQLiteIcon} from "./icons/languages/SQLiteIcon.tsx";
-import {NextUIBlackIcon} from "./icons/languages/NextUIBlackIcon.tsx";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { JavaIcon } from "./icons/languages/JavaIcon.tsx";
+import { PythonIcon } from "./icons/languages/PythonIcon.tsx";
+import { AndroidIcon } from "./icons/languages/AndroidIcon.tsx";
+import { ReactIcon } from "./icons/languages/ReactIcon.tsx";
+import { JavascriptIcon } from "./icons/languages/JavascriptIcon.tsx";
+import { TypescriptIcon } from "./icons/languages/TypescriptIcon.tsx";
+import { PHPIcon } from "./icons/languages/PHPIcon.tsx";
+import { HtmlIcon } from "./icons/languages/HtmlIcon.tsx";
+import { CssIcon } from "./icons/languages/CssIcon.tsx";
+import { CIcon } from "./icons/languages/CIcon.tsx";
+import { LuaIcon } from "./icons/languages/LuaIcon.tsx";
+import { FlaskIcon } from "./icons/languages/FlaskIcon.tsx";
+import { SpringBoot } from "./icons/languages/SpringBoot.tsx";
+import { GitlabIcon } from "./icons/languages/GitlabIcon.tsx";
+import { GitIcon } from "./icons/languages/GitIcon.tsx";
+import { DockerIcon } from "./icons/languages/DockerIcon.tsx";
+import { MongoDBIcon } from "./icons/languages/MongoDBIcon.tsx";
+import { MysqlIcon } from "./icons/languages/MysqlIcon.tsx";
+import { PostgreSQLIcon } from "./icons/languages/PostgreSQLIcon.tsx";
+import { SQLiteIcon } from "./icons/languages/SQLiteIcon.tsx";
+import { NextUIBlackIcon } from "./icons/languages/NextUIBlackIcon.tsx";
 
 const skills = [
-    {name: "Java", icon: <JavaIcon className="w-12 h-12"/>},
-    {name: "SpringBoot", icon: <SpringBoot className="w-12 h-12"/>},
-    {name: "Android", icon: <AndroidIcon className="w-12 h-12"/>},
-    {name: "Python", icon: <PythonIcon className="w-12 h-12"/>},
-    {name: "Flask", icon: <FlaskIcon className="w-12 h-12"/>},
-    {name: "Typescript", icon: <TypescriptIcon className="w-12 h-12"/>},
-    {name: "React", icon: <ReactIcon className="w-12 h-12"/>},
-    {name: "Javascript", icon: <JavascriptIcon className="w-12 h-12"/>},
-    {name: "NextUI", icon: <NextUIBlackIcon className="w-12 h-12"/>},
-    {name: "PHP", icon: <PHPIcon className="w-12 h-12"/>},
-    {name: "HTML", icon: <HtmlIcon className="w-12 h-12"/>},
-    {name: "CSS", icon: <CssIcon className="w-12 h-12"/>},
-    {name: "C", icon: <CIcon/>},
-    {name: "Lua", icon: <LuaIcon className="w-12 h-12"/>},
-    {name: "Gitlab", icon: <GitlabIcon className="w-12 h-12"/>},
-    {name: "Git", icon: <GitIcon className="w-12 h-12"/>},
-    {name: "Docker", icon: <DockerIcon className="w-12 h-12"/>},
-    {name: "MongoDB", icon: <MongoDBIcon className="w-12 h-12"/>},
-    {name: "MySQL", icon: <MysqlIcon className="w-12 h-12"/>},
-    {name: "PostgreSQL", icon: <PostgreSQLIcon className="w-12 h-12"/>},
-    {name: "SQLite", icon: <SQLiteIcon className="w-12 h-12"/>},
+    { name: "Java", icon: <JavaIcon className="w-12 h-12" /> },
+    { name: "SpringBoot", icon: <SpringBoot className="w-12 h-12" /> },
+    { name: "Android", icon: <AndroidIcon className="w-12 h-12" /> },
+    { name: "Python", icon: <PythonIcon className="w-12 h-12" /> },
+    { name: "Flask", icon: <FlaskIcon className="w-12 h-12" /> },
+    { name: "Typescript", icon: <TypescriptIcon className="w-12 h-12" /> },
+    { name: "React", icon: <ReactIcon className="w-12 h-12" /> },
+    { name: "Javascript", icon: <JavascriptIcon className="w-12 h-12" /> },
+    { name: "NextUI", icon: <NextUIBlackIcon className="w-12 h-12" /> },
+    { name: "PHP", icon: <PHPIcon className="w-12 h-12" /> },
+    { name: "HTML", icon: <HtmlIcon className="w-12 h-12" /> },
+    { name: "CSS", icon: <CssIcon className="w-12 h-12" /> },
+    { name: "C", icon: <CIcon /> },
+    { name: "Lua", icon: <LuaIcon className="w-12 h-12" /> },
+    { name: "Gitlab", icon: <GitlabIcon className="w-12 h-12" /> },
+    { name: "Git", icon: <GitIcon className="w-12 h-12" /> },
+    { name: "Docker", icon: <DockerIcon className="w-12 h-12" /> },
+    { name: "MongoDB", icon: <MongoDBIcon className="w-12 h-12" /> },
+    { name: "MySQL", icon: <MysqlIcon className="w-12 h-12" /> },
+    { name: "PostgreSQL", icon: <PostgreSQLIcon className="w-12 h-12" /> },
+    { name: "SQLite", icon: <SQLiteIcon className="w-12 h-12" /> },
 ];
 
 const SkillsSection: React.FC = () => {
@@ -54,6 +55,13 @@ const SkillsSection: React.FC = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentSkills = skills.slice(startIndex, endIndex);
+
+    // Define animations for the container
+    const containerVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -20 },
+    };
 
     return (
         <div className="min-h-[90vh]">
@@ -66,13 +74,24 @@ const SkillsSection: React.FC = () => {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    {currentSkills.map((skill, index) => (
-                        <SkillCard
-                            key={index}
-                            name={skill.name}
-                            icon={skill.icon}
-                        />
-                    ))}
+                    {/* AnimatePresence enables exit animations */}
+                    <AnimatePresence mode={"wait"}>
+                        {currentSkills.map((skill) => (
+                            <motion.div
+                                key={skill.name} // Use unique key for AnimatePresence
+                                variants={containerVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                transition={{ duration: 0.3 }}
+                            >
+                                <SkillCard
+                                    name={skill.name}
+                                    icon={skill.icon}
+                                />
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
                 </div>
 
                 {/* Pagination Controls */}

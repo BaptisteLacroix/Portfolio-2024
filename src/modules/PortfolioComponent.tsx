@@ -14,6 +14,8 @@ import {TcpUdpIcon} from "./icons/languages/TcpUdpIcon.tsx";
 import {PythonIcon} from "./icons/languages/PythonIcon.tsx";
 import {WindowsIcon} from "./icons/languages/WindowsIcon.tsx";
 import {AndroidIcon} from "./icons/languages/AndroidIcon.tsx";
+import { motion } from "framer-motion";
+import {useInView} from "react-intersection-observer";
 
 export const PortfolioComponent = () => {
     return (
@@ -41,35 +43,51 @@ interface CardProps {
 /**
  * Card Component with hover effect to display languages
  */
-const Card = React.memo(({card, index, hovered, setHovered}: CardProps) => (
-    <div
-        onMouseEnter={() => setHovered(index)}
-        onMouseLeave={() => setHovered(null)}
-        onClick={() => {
-            if (card.url) window.open(card.url, '_blank')
-        }}
-        className={`cursor-pointer rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
-    >
-        <img
-            src={card.img}
-            alt={card.title}
-            className={`object-cover absolute inset-0 w-full h-full hover:scale-100 ${hovered === index ? "scale-110" : ""} transition-transform duration-300 ease-out`}
-        />
-        <div
-            className={`absolute inset-0 bg-black/50 flex py-8 px-4 transition-opacity duration-300 ${hovered === index ? "opacity-100" : "opacity-0"}`}>
+const Card = React.memo(({card, index, hovered, setHovered}: CardProps) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.6,
+    });
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+    };
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={cardVariants}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            onMouseEnter={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
+            onClick={() => {
+                if (card.url) window.open(card.url, '_blank')
+            }}
+            className={`cursor-pointer rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
+        >
+            <img
+                src={card.img}
+                alt={card.title}
+                className={`object-cover absolute inset-0 w-full h-full hover:scale-100 ${hovered === index ? "scale-110" : ""} transition-transform duration-300 ease-out`}
+            />
             <div
-                className="text-lg md:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
-                {/* Show languages on hover */}
-                <ul>
-                    {card.languages.map((language, idx) => (
-                        <li className={'flex flex-row mr-5 mt-5 mb-5'} key={idx}>{language.logo}<span
-                            className={"ml-2"}>{language.name}</span></li>
-                    ))}
-                </ul>
+                className={`absolute inset-0 bg-black/50 flex py-8 px-4 transition-opacity duration-300 ${hovered === index ? "opacity-100" : "opacity-0"}`}>
+                <div
+                    className="text-lg md:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+                    {/* Show languages on hover */}
+                    <ul>
+                        {card.languages.map((language, idx) => (
+                            <li className={'flex flex-row mr-5 mt-5 mb-5'} key={idx}>{language.logo}<span
+                                className={"ml-2"}>{language.name}</span></li>
+                        ))}
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
-));
+        </motion.div>
+    )
+});
 
 Card.displayName = "Card";
 

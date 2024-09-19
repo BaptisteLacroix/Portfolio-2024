@@ -5,6 +5,9 @@ import {AirbusIcon} from "./icons/formationIcons/AirbusIcon.tsx";
 import {BusitIcon} from "./icons/formationIcons/BusitIcon.tsx";
 import {IUTIcon} from "./icons/formationIcons/IUTIcon.tsx";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 interface ExperienceCardProps {
     icon: JSX.Element;
     title: string;
@@ -14,9 +17,26 @@ interface ExperienceCardProps {
     isOdd: boolean;
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({icon, title, company, description, years, isOdd}) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, description, years, isOdd }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.8, // 10% of the card needs to be visible to trigger the animation
+    });
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+    };
+
     return (
-        <div className={`flex justify-center items-center m-5`}>
+        <motion.div
+            ref={ref}
+            className={`flex justify-center items-center m-5`}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={cardVariants}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <Card
                 className={`relative flex ${
                     isOdd ? "flex-row-reverse" : "flex-row"
@@ -33,30 +53,26 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({icon, title, company, de
 
                 {/* Content Section */}
                 <CardBody className={`${isOdd ? "pr-16 text-right" : "pl-16"}`}>
-                    <h2 className="text-2xl font-semibold text-gray-800">
-                        {title}
-                    </h2>
+                    <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
                     <p className="text-md text-gray-600">{company}</p>
                     <p className="text-gray-500 mt-2">{description}</p>
                 </CardBody>
 
                 {/* Right or Left Section (Date, based on isOdd) */}
                 <div className={`absolute top-5 ${isOdd ? "left-5" : "right-5"}`}>
-                    <span className="px-4 py-2 bg-blue-50 text-blue-500 rounded-md font-semibold">
-                        {years}
-                    </span>
+                    <span className="px-4 py-2 bg-blue-50 text-blue-500 rounded-md font-semibold">{years}</span>
                 </div>
             </Card>
-        </div>
+        </motion.div>
     );
 };
 
-// Main Page Component
+
 export const ExperienceList: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center p-6 w-full">
             <ExperienceCard
-                icon={<PolytechIcon/>}
+                icon={<PolytechIcon />}
                 title="Polytech Nice Sophia"
                 company="Master's degree - In computer engineering"
                 description="Studying computer engineering at Polytech Nice Sophia, specializing in software engineering."
@@ -64,9 +80,7 @@ export const ExperienceList: React.FC = () => {
                 isOdd={true}
             />
             <ExperienceCard
-                icon={
-                    <AirbusIcon className={"rounded-full"}/>
-                }
+                icon={<AirbusIcon className={"rounded-full"} />}
                 title="Airbus Defense and Space"
                 company="Apprentice - Software Engineer"
                 description="Working as an apprentice software engineer at Airbus Defense and Space, specializing in software development."
@@ -74,9 +88,7 @@ export const ExperienceList: React.FC = () => {
                 isOdd={false}
             />
             <ExperienceCard
-                icon={
-                    <BusitIcon/>
-                }
+                icon={<BusitIcon />}
                 title="Busit SAS"
                 company="Internship - Software Developer"
                 description="Internship as a full stack developer at Busit SAS, specializing in web development."
@@ -84,9 +96,7 @@ export const ExperienceList: React.FC = () => {
                 isOdd={true}
             />
             <ExperienceCard
-                icon={
-                    <IUTIcon/>
-                }
+                icon={<IUTIcon />}
                 title="IUT Nice Côte d'Azur"
                 company="BUT - Computer Science"
                 description="Graduated with a DUT in computer science from IUT Nice Côte d'Azur, specializing in software development."
@@ -96,3 +106,4 @@ export const ExperienceList: React.FC = () => {
         </div>
     );
 };
+
