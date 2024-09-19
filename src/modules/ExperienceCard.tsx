@@ -31,7 +31,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, d
     return (
         <motion.div
             ref={ref}
-            className={`flex justify-center items-center m-5`}
+            className={`flex justify-center items-center m-5 w-screen md:w-auto`}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={cardVariants}
