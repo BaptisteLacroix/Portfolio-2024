@@ -5,10 +5,6 @@ import {PortfolioComponent} from "./modules/PortfolioComponent.tsx";
 import SkillsSection from "./modules/SkillsSection.tsx";
 import {useRef} from "react";
 
-
-// Create  a component that will contain all the components and the ref of each component so when we click on the menu we can scroll to the component
-
-
 export default function App() {
     const homeRef = useRef<HTMLDivElement>(null);
     const formationRef = useRef<HTMLDivElement>(null);
