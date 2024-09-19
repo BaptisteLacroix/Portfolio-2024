@@ -86,10 +86,7 @@ const SkillsSection: React.FC = () => {
                         total={Math.ceil(skills.length / itemsPerPage)}
                         initialPage={1}
                         onChange={(page) => setCurrentPage(page)}
-                        shadow
-                        bordered
                         color="primary"
-                        rounded
                         showControls={true}
                     />
                 </div>

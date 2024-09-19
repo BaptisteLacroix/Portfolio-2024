@@ -2,8 +2,7 @@ import type {SVGProps} from 'react';
 
 export function CIcon(props: SVGProps<SVGSVGElement>) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64px" height="64px"
-             xmlns:xlink="http://www.w3.org/1999/xlink" {...props}>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64px" height="64px" {...props}>
             <g>
                 <path fill="#5f6dbf"
                       d="M 29.5,-0.5 C 30.8333,-0.5 32.1667,-0.5 33.5,-0.5C 42.1667,4.83333 50.8333,10.1667 59.5,15.5C 55.8351,16.997 52.5017,18.997 49.5,21.5C 49.2562,18.7374 47.9229,16.5707 45.5,15C 29.3266,5.84988 17.4932,9.68321 10,26.5C 9.2474,32.0774 10.0807,37.4107 12.5,42.5C 9.05163,43.3901 6.05163,45.0568 3.5,47.5C 2.17624,36.6596 2.17624,25.6596 3.5,14.5C 12.2295,9.47312 20.8961,4.47312 29.5,-0.5 Z"/>
