@@ -1,19 +1,19 @@
 import {Pagination} from "@nextui-org/react";
 import React, {ReactNode, useState} from "react";
-import {ReactIcon} from "./svg/languages/ReactIcon.tsx";
-import {TypescriptIcon} from "./svg/languages/TypescriptIcon.tsx";
-import {BabylonJSIcon} from "./svg/languages/BabylonJSIcon.tsx";
-import {NextUIIcon} from "./svg/languages/NextUIIcon.tsx";
-import {TailwindIcon} from "./svg/languages/TailwindIcon.tsx";
-import {PHPIcon} from "./svg/languages/PHPIcon.tsx";
-import {JavascriptIcon} from "./svg/languages/JavascriptIcon.tsx";
-import {HtmlIcon} from "./svg/languages/HtmlIcon.tsx";
-import {CssIcon} from "./svg/languages/CssIcon.tsx";
-import {JavaIcon} from "./svg/languages/JavaIcon.tsx";
-import {TcpUdpIcon} from "./svg/languages/TcpUdpIcon.tsx";
-import {PythonIcon} from "./svg/languages/PythonIcon.tsx";
-import {WindowsIcon} from "./svg/languages/WindowsIcon.tsx";
-import {AndroidIcon} from "./svg/languages/AndroidIcon.tsx";
+import {ReactIcon} from "./icons/languages/ReactIcon.tsx";
+import {TypescriptIcon} from "./icons/languages/TypescriptIcon.tsx";
+import {BabylonJSIcon} from "./icons/languages/BabylonJSIcon.tsx";
+import {NextUIIcon} from "./icons/languages/NextUIIcon.tsx";
+import {TailwindIcon} from "./icons/languages/TailwindIcon.tsx";
+import {PHPIcon} from "./icons/languages/PHPIcon.tsx";
+import {JavascriptIcon} from "./icons/languages/JavascriptIcon.tsx";
+import {HtmlIcon} from "./icons/languages/HtmlIcon.tsx";
+import {CssIcon} from "./icons/languages/CssIcon.tsx";
+import {JavaIcon} from "./icons/languages/JavaIcon.tsx";
+import {TcpUdpIcon} from "./icons/languages/TcpUdpIcon.tsx";
+import {PythonIcon} from "./icons/languages/PythonIcon.tsx";
+import {WindowsIcon} from "./icons/languages/WindowsIcon.tsx";
+import {AndroidIcon} from "./icons/languages/AndroidIcon.tsx";
 
 export const PortfolioComponent = () => {
     return (
@@ -124,7 +124,7 @@ export function PaginatedCardGrid({cards}: { cards: Project[] }) {
 const projects: Project[] = [
     {
         title: 'Games on Web 2024',
-        img: '/portfolio/games-on-web.png',
+        img: './portfolio/games-on-web.png',
         url: 'https://tit0u4n.github.io/games-on-web-team-ficsit/',
         languages: [
             {name: 'React', logo: <ReactIcon/>},
@@ -136,7 +136,7 @@ const projects: Project[] = [
     },
     {
         title: 'Merchant Website',
-        img: '/portfolio/merchant-website.png',
+        img: './portfolio/merchant-website.png',
         url: 'https://github.com/BaptisteLacroix/Merchant-Website/',
         languages: [
             {name: 'PHP', logo: <PHPIcon/>},
@@ -147,7 +147,7 @@ const projects: Project[] = [
     },
     {
         title: 'KillBique',
-        img: '/portfolio/killbique.jpg',
+        img: './portfolio/killbique.jpg',
         languages: [
             {name: 'Java', logo: <JavaIcon/>},
             {name: 'TCP/UDP', logo: <TcpUdpIcon/>},
@@ -155,7 +155,7 @@ const projects: Project[] = [
     },
     {
         title: 'Citadel',
-        img: '/portfolio/citadel.jpg',
+        img: './portfolio/citadel.jpg',
         url: 'https://github.com/BaptisteLacroix/projet2-pns-23-24-citadels-2024-b',
         languages: [
             {name: 'Java', logo: <JavaIcon/>},
@@ -163,7 +163,7 @@ const projects: Project[] = [
     },
     {
         title: 'Directory',
-        img: '/portfolio/S401-annuaire.png',
+        img: './portfolio/S401-annuaire.png',
         url: 'https://github.com/BaptisteLacroix/SAE401-Annuaire',
         languages: [
             {name: 'Python', logo: <PythonIcon/>},
@@ -175,7 +175,7 @@ const projects: Project[] = [
     },
     {
         title: 'Dechetri',
-        img: '/portfolio/dechetri.png',
+        img: './portfolio/dechetri.png',
         url: 'https://github.com/BaptisteLacroix/DecheTri',
         languages: [
             {name: 'Java', logo: <ReactIcon/>},
@@ -184,7 +184,7 @@ const projects: Project[] = [
     },
     {
         title: 'Yfitops',
-        img: '/portfolio/Yfitops.png',
+        img: './portfolio/Yfitops.png',
         url: 'https://github.com/BaptisteLacroix/Yfitops',
         languages: [
             {name: 'Java', logo: <ReactIcon/>},
@@ -193,7 +193,7 @@ const projects: Project[] = [
     },
     {
         title: 'Portfolio 2022',
-        img: '/portfolio/portfolio-2022.png',
+        img: './portfolio/portfolio-2022.png',
         url: 'https://github.com/BaptisteLacroix/Portfolio-2022',
         languages: [
             {name: 'HTML', logo: <HtmlIcon/>},
@@ -203,7 +203,7 @@ const projects: Project[] = [
     },
     {
         title: '2048',
-        img: '/portfolio/2048.png',
+        img: './portfolio/2048.png',
         url: 'https://github.com/BaptisteLacroix/2048-js',
         languages: [
             {name: 'Javascript', logo: <JavascriptIcon/>},
@@ -213,7 +213,7 @@ const projects: Project[] = [
     },
     {
         title: 'Taquin',
-        img: '/portfolio/taquin.png',
+        img: './portfolio/taquin.png',
         url: 'https://github.com/BaptisteLacroix/Taquin-js',
         languages: [
             {name: 'Javascript', logo: <JavascriptIcon/>},
@@ -224,7 +224,7 @@ const projects: Project[] = [
     },
     {
         title: 'Space Shooter',
-        img: '/portfolio/spaceShooter.jpg',
+        img: './portfolio/spaceShooter.jpg',
         url: 'https://github.com/BaptisteLacroix/SpaceShooter',
         languages: [
             {name: 'Python', logo: <PythonIcon/>},
@@ -232,7 +232,7 @@ const projects: Project[] = [
     },
     {
         title: 'Labyrinth',
-        img: '/portfolio/labyrinth.jpg',
+        img: './portfolio/labyrinth.jpg',
         url: 'https://github.com/BaptisteLacroix/Labyrinthe',
         languages: [
             {name: 'Python', logo: <PythonIcon/>},

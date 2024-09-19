@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const TypingAnimation: React.FC = () => {
     const [displayText, setDisplayText] = useState('');
@@ -13,11 +13,10 @@ const TypingAnimation: React.FC = () => {
         return new Date().getFullYear() - 2003 - 1;
     }
 
-    const wordList = ['a Student', 'a Full Stack Developer', age().toString()]; // Words to loop through
 
     useEffect(() => {
+        const wordList = ['a Student', 'a Full Stack Developer', age().toString(), 'Looking for an Internship'];
         const handleTyping = () => {
-            // Current word in the loop
             const currentWord = wordList[loopNum % wordList.length];
             const updatedText = isDeleting
                 ? currentWord.substring(0, displayText.length - 1)
@@ -42,7 +41,7 @@ const TypingAnimation: React.FC = () => {
         const typingTimeout = setTimeout(handleTyping, typingSpeed);
 
         return () => clearTimeout(typingTimeout);
-    }, [displayText, isDeleting, loopNum, typingSpeed, wordList]);
+    }, [displayText, isDeleting, loopNum, typingSpeed]);
 
     return (
         <>

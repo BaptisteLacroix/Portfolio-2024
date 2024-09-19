@@ -1,12 +1,12 @@
 import {Card, CardHeader, CardBody, Button, CardFooter, Divider} from "@nextui-org/react";
-import {FlagIcon} from "./svg/FlagIcon.tsx";
+import {FlagIcon} from "./icons/personalDetailsIcons/FlagIcon.tsx";
 import {ExperienceList} from "./ExperienceCard.tsx";
+import React from "react";
 
-export const FormationComponent = () => {
+export const FormationComponent: React.FC = () => {
     return (
         <div className={"flex flex-row justify-center items-center h-screen"}>
             <div className="w-2/3 p-8 bg-white">
-                {/* Section Title */}
                 <Card className="w-full shadow-md bg-white rounded-lg m-4 p-4">
                     <CardHeader className="pb-0">
                         <h1 className="text-2xl font-bold text-gray-700">Personal Details</h1>

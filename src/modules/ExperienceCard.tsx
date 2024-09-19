@@ -1,9 +1,9 @@
 import {Card, CardBody} from "@nextui-org/react";
-import {PolytechIcon} from "./svg/PolytechIcon.tsx";
+import {PolytechIcon} from "./icons/formationIcons/PolytechIcon.tsx";
 import * as React from "react";
-import {AirbusIcon} from "./svg/AirbusIcon.tsx";
-import {BusitIcon} from "./svg/BusitIcon.tsx";
-import {IUTIcon} from "./svg/IUTIcon.tsx";
+import {AirbusIcon} from "./icons/formationIcons/AirbusIcon.tsx";
+import {BusitIcon} from "./icons/formationIcons/BusitIcon.tsx";
+import {IUTIcon} from "./icons/formationIcons/IUTIcon.tsx";
 
 interface ExperienceCardProps {
     icon: JSX.Element;
@@ -11,10 +11,9 @@ interface ExperienceCardProps {
     company: string;
     description: string;
     years: string;
-    isOdd: boolean; // New prop to determine the layout direction
+    isOdd: boolean;
 }
 
-// ExperienceCard Component
 const ExperienceCard: React.FC<ExperienceCardProps> = ({icon, title, company, description, years, isOdd}) => {
     return (
         <div className={`flex justify-center items-center m-5`}>
@@ -53,10 +52,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({icon, title, company, de
 };
 
 // Main Page Component
-export const ExperienceList = () => {
+export const ExperienceList: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center p-6 w-full">
-            {/* Experience Cards */}
             <ExperienceCard
                 icon={<PolytechIcon/>}
                 title="Polytech Nice Sophia"

@@ -1,30 +1,28 @@
 import {Pagination} from "@nextui-org/react";
 import SkillCard from "./SkillCard";
-import {useState} from "react";
-import {JavaIcon} from "./svg/languages/JavaIcon.tsx";
-import {PythonIcon} from "./svg/languages/PythonIcon.tsx";
-import {AndroidIcon} from "./svg/languages/AndroidIcon.tsx";
-import {ReactIcon} from "./svg/languages/ReactIcon.tsx";
-import {JavascriptIcon} from "./svg/languages/JavascriptIcon.tsx";
-import {TypescriptIcon} from "./svg/languages/TypescriptIcon.tsx";
-import {PHPIcon} from "./svg/languages/PHPIcon.tsx";
-import {HtmlIcon} from "./svg/languages/HtmlIcon.tsx";
-import {CssIcon} from "./svg/languages/CssIcon.tsx";
-import {CIcon} from "./svg/languages/CIcon.tsx";
-import {LuaIcon} from "./svg/languages/LuaIcon.tsx";
-import {FlaskIcon} from "./svg/languages/FlaskIcon.tsx";
-import {SpringBoot} from "./svg/languages/SpringBoot.tsx";
-import {NextUIIcon} from "./svg/languages/NextUIIcon.tsx";
-import {GitlabIcon} from "./svg/languages/GitlabIcon.tsx";
-import {GitIcon} from "./svg/languages/GitIcon.tsx";
-import {DockerIcon} from "./svg/languages/DockerIcon.tsx";
-import {MongoDBIcon} from "./svg/languages/MongoDBIcon.tsx";
-import {MysqlIcon} from "./svg/languages/MysqlIcon.tsx";
-import {PostgreSQLIcon} from "./svg/languages/PostgreSQLIcon.tsx";
-import {SQLiteIcon} from "./svg/languages/SQLiteIcon.tsx";
-import {NextUIBlackIcon} from "./svg/languages/NextUIBlackIcon.tsx";
+import React, {useState} from "react";
+import {JavaIcon} from "./icons/languages/JavaIcon.tsx";
+import {PythonIcon} from "./icons/languages/PythonIcon.tsx";
+import {AndroidIcon} from "./icons/languages/AndroidIcon.tsx";
+import {ReactIcon} from "./icons/languages/ReactIcon.tsx";
+import {JavascriptIcon} from "./icons/languages/JavascriptIcon.tsx";
+import {TypescriptIcon} from "./icons/languages/TypescriptIcon.tsx";
+import {PHPIcon} from "./icons/languages/PHPIcon.tsx";
+import {HtmlIcon} from "./icons/languages/HtmlIcon.tsx";
+import {CssIcon} from "./icons/languages/CssIcon.tsx";
+import {CIcon} from "./icons/languages/CIcon.tsx";
+import {LuaIcon} from "./icons/languages/LuaIcon.tsx";
+import {FlaskIcon} from "./icons/languages/FlaskIcon.tsx";
+import {SpringBoot} from "./icons/languages/SpringBoot.tsx";
+import {GitlabIcon} from "./icons/languages/GitlabIcon.tsx";
+import {GitIcon} from "./icons/languages/GitIcon.tsx";
+import {DockerIcon} from "./icons/languages/DockerIcon.tsx";
+import {MongoDBIcon} from "./icons/languages/MongoDBIcon.tsx";
+import {MysqlIcon} from "./icons/languages/MysqlIcon.tsx";
+import {PostgreSQLIcon} from "./icons/languages/PostgreSQLIcon.tsx";
+import {SQLiteIcon} from "./icons/languages/SQLiteIcon.tsx";
+import {NextUIBlackIcon} from "./icons/languages/NextUIBlackIcon.tsx";
 
-// Skills data array
 const skills = [
     {name: "Java", icon: <JavaIcon className="w-12 h-12"/>},
     {name: "SpringBoot", icon: <SpringBoot className="w-12 h-12"/>},
@@ -38,7 +36,7 @@ const skills = [
     {name: "PHP", icon: <PHPIcon className="w-12 h-12"/>},
     {name: "HTML", icon: <HtmlIcon className="w-12 h-12"/>},
     {name: "CSS", icon: <CssIcon className="w-12 h-12"/>},
-    {name: "C", icon: <CIcon />},
+    {name: "C", icon: <CIcon/>},
     {name: "Lua", icon: <LuaIcon className="w-12 h-12"/>},
     {name: "Gitlab", icon: <GitlabIcon className="w-12 h-12"/>},
     {name: "Git", icon: <GitIcon className="w-12 h-12"/>},
@@ -50,11 +48,9 @@ const skills = [
 ];
 
 const SkillsSection: React.FC = () => {
-    // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 8; // Number of items per page
+    const itemsPerPage = 8;
 
-    // Calculate the range of items to display
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentSkills = skills.slice(startIndex, endIndex);
@@ -69,7 +65,6 @@ const SkillsSection: React.FC = () => {
                     grow.
                 </p>
 
-                {/* Skills Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {currentSkills.map((skill, index) => (
                         <SkillCard

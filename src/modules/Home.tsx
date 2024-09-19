@@ -7,9 +7,10 @@ import {
     CardHeader, Divider,
 } from "@nextui-org/react";
 import TypingAnimation from "./TypingAnimation.tsx";
-import {EmailIcon} from "./svg/EmailIcon.tsx";
-import {LanguageIcon} from "./svg/LanguageIcon.tsx";
-import {FlagIcon} from "./svg/FlagIcon.tsx";
+import {EmailIcon} from "./icons/personalDetailsIcons/EmailIcon.tsx";
+import {LanguageIcon} from "./icons/personalDetailsIcons/LanguageIcon.tsx";
+import {FlagIcon} from "./icons/personalDetailsIcons/FlagIcon.tsx";
+import {DownloadCVComponent} from "./DownloadCVComponent.tsx";
 
 
 export const Home = () => {
@@ -21,7 +22,7 @@ export const Home = () => {
                     <div className="w-1/4"></div>
                     <div>
                         {/* First Card (Looking for Internship) */}
-                        <Card className="w-full flex items-center m-1 border-1 w-1/3">
+                        <Card className="flex items-center m-1 border-1 w-1/3">
                             <CardHeader className="flex items-center">
                                 <Badge isInvisible={true} shape="circle">
                                     <div className="bg-blue-500 rounded-full p-1 pl-2 pr-2 text-white">
@@ -32,7 +33,7 @@ export const Home = () => {
                             </CardHeader>
                         </Card>
 
-                        {/* Second Card (Profile Header with Buttons) */}
+                        {/* Second Card (Profile Header) */}
                         <Card className="shadow-none mt-8 mb-8 bg-inherit">
                             <CardHeader className="pb-0">
                                 <h1 className="text-4xl font-bold text-left">Hey I'm Baptiste Lacroix</h1>
@@ -44,13 +45,14 @@ export const Home = () => {
                             </CardBody>
                             <CardFooter>
                                 <div className="flex space-x-4">
-                                    <Button color="primary">Hire Me</Button>
-                                    <Button color="primary" variant="bordered">Download CV</Button>
+                                    <Button color={"primary"}>
+                                        <a href={`mailto:contact@baptiste-lacroix.fr?subject=${encodeURIComponent('Potential Hire')}`}> Hire Me ! </a>
+                                    </Button>
+                                    <DownloadCVComponent/>
                                 </div>
                             </CardFooter>
                         </Card>
 
-                        {/* Add Divider for separation */}
                         <Divider className="my-8"/>
 
                         {/* Third Card (Details and Info Section) */}
@@ -66,7 +68,8 @@ export const Home = () => {
                                         <div className="flex items-center space-x-3">
                                             <EmailIcon className={"w-[30px] h-[30px]"}/>
                                             <p className="text-gray-600">
-                                                <strong className="text-gray-800">Email:</strong> mail@mail.com
+                                                <strong className="text-gray-800">Email:</strong>
+                                                <a href={`mailto:contact@baptiste-lacroix.fr?subject=${encodeURIComponent('Potential Hire')}`}> contact@baptiste-lacroix.fr </a>
                                             </p>
                                         </div>
                                         <div className="flex items-center space-x-3">
@@ -80,7 +83,7 @@ export const Home = () => {
                                             <FlagIcon className={"w-[30px] h-[30px]"}/>
                                             <p className="text-gray-600">
                                                 <strong className="text-gray-800">Nationality:</strong> French |
-                                                Canadian Citizen
+                                                Canadian
                                             </p>
                                         </div>
                                     </CardBody>

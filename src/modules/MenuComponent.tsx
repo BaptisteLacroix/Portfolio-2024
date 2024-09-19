@@ -1,7 +1,7 @@
-import React from "react";
 import {Badge, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
-import {GithubIcon} from "./svg/GithubIcon.tsx";
-import {LinkedinIcon} from "./svg/LinkedinIcon.tsx";
+import {GithubIcon} from "./icons/navIcons/GithubIcon.tsx";
+import {LinkedinIcon} from "./icons/navIcons/LinkedinIcon.tsx";
+import React from "react";
 
 export interface MenuComponentProps {
     onHomeClick: () => void;
@@ -10,12 +10,12 @@ export interface MenuComponentProps {
     onSkillsClick: () => void;
 }
 
-export const MenuComponent = ({
-                                  onHomeClick,
-                                  onFormationClick,
-                                  onPortfolioClick,
-                                  onSkillsClick,
-                              }: MenuComponentProps) => {
+export const MenuComponent: React.FC<MenuComponentProps> = ({
+                                                                onHomeClick,
+                                                                onFormationClick,
+                                                                onPortfolioClick,
+                                                                onSkillsClick,
+                                                            }) => {
     return (
         <Navbar shouldHideOnScroll={false} className="shadow-lg bg-white px-6 md:px-12">
             {/* Branding Section */}

@@ -1,5 +1,5 @@
 import {Card, CardBody} from "@nextui-org/react";
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 interface SkillCardProps {
     name: string;
