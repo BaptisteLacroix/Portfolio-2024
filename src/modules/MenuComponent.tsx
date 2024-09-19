@@ -1,9 +1,18 @@
-import {Badge, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
+import {
+    Badge,
+    Link,
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem,
+    NavbarMenu,
+    NavbarMenuItem, NavbarMenuToggle
+} from "@nextui-org/react";
 import {GithubIcon} from "./icons/navIcons/GithubIcon.tsx";
 import {LinkedinIcon} from "./icons/navIcons/LinkedinIcon.tsx";
 import React from "react";
 
-export interface MenuComponentProps {
+interface MenuComponentProps {
     onHomeClick: () => void;
     onFormationClick: () => void;
     onPortfolioClick: () => void;
@@ -16,59 +25,77 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                                                                 onPortfolioClick,
                                                                 onSkillsClick,
                                                             }) => {
-    return (
-        <Navbar shouldHideOnScroll={false} className="shadow-lg bg-white px-6 md:px-12">
-            {/* Branding Section */}
-            <NavbarBrand className="flex items-center space-x-3">
-                <span className="text-xl font-bold text-gray-800">Baptiste Lacroix</span>
-            </NavbarBrand>
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-            {/* Menu Items */}
+    const menuItems = [
+        { name: "Home", onClick: onHomeClick },
+        { name: "Formation", onClick: onFormationClick },
+        { name: "Portfolio", onClick: onPortfolioClick },
+        { name: "Skills", onClick: onSkillsClick },
+    ];
+
+    return (
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="shadow-lg bg-white px-6 md:px-12">
+            {/* Branding Section */}
+            <NavbarContent>
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="sm:hidden"
+                />
+                <NavbarBrand className="flex items-center space-x-3">
+                    <span className="text-xl font-bold text-gray-800">Baptiste Lacroix</span>
+                </NavbarBrand>
+            </NavbarContent>
+
+            {/* Desktop Menu Items */}
             <NavbarContent className="hidden md:flex gap-8 ml-auto" justify="center">
-                <NavbarItem className="hover:text-primary">
-                    <Link className="text-lg font-medium hover:text-blue-600 cursor-pointer" onClick={onHomeClick}>
-                        Home
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link className="text-lg font-medium hover:text-blue-600 cursor-pointer" onClick={onFormationClick}>
-                        Formation
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link className="text-lg font-medium hover:text-blue-600 cursor-pointer" onClick={onPortfolioClick}>
-                        Portfolio
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link className="text-lg font-medium hover:text-blue-600 cursor-pointer" onClick={onSkillsClick}>
-                        Skills
-                    </Link>
-                </NavbarItem>
+                {menuItems.map((item, index) => (
+                    <NavbarItem key={index} className="hover:text-primary">
+                        <Link
+                            className="text-lg font-medium hover:text-blue-600 cursor-pointer"
+                            onClick={item.onClick}
+                        >
+                            {item.name}
+                        </Link>
+                    </NavbarItem>
+                ))}
             </NavbarContent>
 
             {/* Social Icons */}
-            <NavbarContent className="flex items-center space-x-4 ml-auto" justify={"end"}>
+            <NavbarContent className="flex items-center space-x-4 ml-auto" justify="end">
                 <NavbarItem
-                    className={"cursor-pointer"}
+                    className="cursor-pointer"
                     onClick={() => window.open("https://github.com/BaptisteLacroix", "_blank")}
                 >
-                    <Badge
-                        color="primary"
-                        className="hover:bg-blue-100 transition duration-200"
-                    >
-                        <GithubIcon className="w-6 h-6 text-gray-700 hover:text-blue-600"/>
+                    <Badge color="primary" className="hover:bg-blue-100 transition duration-200">
+                        <GithubIcon className="w-6 h-6 text-gray-700 hover:text-blue-600" />
                     </Badge>
                 </NavbarItem>
                 <NavbarItem
-                    className={"cursor-pointer"}
+                    className="cursor-pointer"
                     onClick={() => window.open("https://www.linkedin.com/in/lacroix-baptiste/", "_blank")}
                 >
                     <Badge color="primary" className="hover:bg-blue-100 transition duration-200">
-                        <LinkedinIcon className="w-6 h-6 text-gray-700 hover:text-blue-600"/>
+                        <LinkedinIcon className="w-6 h-6 text-gray-700 hover:text-blue-600" />
                     </Badge>
                 </NavbarItem>
             </NavbarContent>
+
+            {/* Mobile Menu */}
+            <NavbarMenu>
+                {menuItems.map((item, index) => (
+                    <NavbarMenuItem key={index}>
+                        <Link
+                            className="w-full text-lg"
+                            color="foreground"
+                            href="#"
+                            onClick={item.onClick}
+                        >
+                            {item.name}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+            </NavbarMenu>
         </Navbar>
     );
 };

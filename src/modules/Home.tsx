@@ -24,7 +24,7 @@ export const Home = () => {
         <>
             <div className={"home-container"}>
                 <div className="min-h-[100vh] flex items-center">
-                    <div className="w-1/4"></div>
+                    <div className="w-0 md:w-1/4"></div>
                     <div>
                         <motion.div
                             initial="hidden"
@@ -32,11 +32,11 @@ export const Home = () => {
                             variants={cardVariants}
                             transition={{ duration: 0.5 }}
                         >
-                            <Card className="flex items-center m-1 border-1 w-full md:w-1/3">
+                            <Card className="flex items-center m-1 border-1 w-[90wh] sm:w-1/3">
                                 <CardHeader className="flex items-center">
                                     <Badge isInvisible={true} shape="circle">
-                                        <div className="bg-blue-500 rounded-full p-1 pl-2 pr-2 text-white">
-                                            Hot
+                                        <div className="bg-red-700 rounded-full p-1 pl-2 pr-2 text-white">
+                                            Live
                                         </div>
                                     </Badge>
                                     <div className="ml-3 text-lg font-semibold">
@@ -85,9 +85,9 @@ export const Home = () => {
                             variants={cardVariants}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
-                            <Card className="w-full flex justify-between bg-gray-100 p-5 rounded-lg shadow-md">
-                                <CardBody className="flex flex-col md:flex-row">
-                                    <Card className="w-full md:w-1/2 shadow-md bg-white rounded-lg m-4 p-4">
+                            <Card className="w-full flex justify-between bg-gray-100 p-0 md:p-5 rounded-lg shadow-md">
+                                <CardBody className="flex flex-col md:flex-row overflow-hidden">
+                                    <Card className="w-full md:w-1/2 shadow-md bg-white rounded-lg m-0 md:m-4 p-0 md:p-4">
                                         <CardHeader className="pb-0">
                                             <h1 className="text-2xl font-bold text-gray-700">
                                                 Personal Details
@@ -122,7 +122,7 @@ export const Home = () => {
                                         </CardBody>
                                     </Card>
 
-                                    <Card className="w-full shadow-none bg-white m-2">
+                                    <Card className="w-full shadow-none bg-white mt-2 sm:m-2">
                                         <CardHeader>
                                             <h1 className="font-semibold text-3xl">
                                                 <TypingAnimation />
@@ -161,7 +161,7 @@ export const Home = () => {
                             </Card>
                         </motion.div>
                     </div>
-                    <div className="w-1/6"></div>
+                    <div className="w-0 md:w-1/6"></div>
                 </div>
             </div>
         </>

@@ -92,7 +92,7 @@ export const ExperienceList: React.FC = () => {
                 title="Busit SAS"
                 company="Internship - Software Developer"
                 description="Internship as a full stack developer at Busit SAS, specializing in web development."
-                years="April 2023 - August 2023"
+                years="4 month - 2023"
                 isOdd={true}
             />
             <ExperienceCard

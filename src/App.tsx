@@ -19,23 +19,25 @@ export default function App() {
 
     return (
         <>
-            <MenuComponent
-                onHomeClick={() => scrollToRef(homeRef)}
-                onFormationClick={() => scrollToRef(formationRef)}
-                onPortfolioClick={() => scrollToRef(portfolioRef)}
-                onSkillsClick={() => scrollToRef(skillsRef)}
-            />
-            <div ref={homeRef}>
-                <Home/>
-            </div>
-            <div ref={formationRef}>
-                <FormationComponent/>
-            </div>
-            <div ref={portfolioRef}>
-                <PortfolioComponent/>
-            </div>
-            <div ref={skillsRef}>
-                <SkillsSection/>
+            <div className={"overflow-hidden"}>
+                <MenuComponent
+                    onHomeClick={() => scrollToRef(homeRef)}
+                    onFormationClick={() => scrollToRef(formationRef)}
+                    onPortfolioClick={() => scrollToRef(portfolioRef)}
+                    onSkillsClick={() => scrollToRef(skillsRef)}
+                />
+                <div ref={homeRef}>
+                    <Home/>
+                </div>
+                <div ref={formationRef}>
+                    <FormationComponent/>
+                </div>
+                <div ref={portfolioRef}>
+                    <PortfolioComponent/>
+                </div>
+                <div ref={skillsRef}>
+                    <SkillsSection/>
+                </div>
             </div>
         </>
     );

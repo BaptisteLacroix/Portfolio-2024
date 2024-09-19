@@ -8,7 +8,7 @@ export const FormationComponent: React.FC = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-start lg:items-center p-6">
             <div className="w-full lg:w-2/3 p-4 bg-white">
-                <Card className="w-full lg bg-white rounded-lg m-4 p-4">
+                <Card className="w-full lg bg-white rounded-lg ml-0 sm:m-4 p-4">
                     <CardHeader className="pb-0">
                         <h1 className="text-xl lg:text-2xl font-bold text-gray-700">Personal Details</h1>
                     </CardHeader>
