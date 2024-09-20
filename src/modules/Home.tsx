@@ -8,16 +8,16 @@ import {
     Divider,
 } from "@nextui-org/react";
 import TypingAnimation from "./TypingAnimation.tsx";
-import { EmailIcon } from "./icons/personalDetailsIcons/EmailIcon.tsx";
-import { LanguageIcon } from "./icons/personalDetailsIcons/LanguageIcon.tsx";
-import { FlagIcon } from "./icons/personalDetailsIcons/FlagIcon.tsx";
-import { DownloadCVComponent } from "./DownloadCVComponent.tsx";
-import { motion } from "framer-motion";
+import {EmailIcon} from "./icons/personalDetailsIcons/EmailIcon.tsx";
+import {LanguageIcon} from "./icons/personalDetailsIcons/LanguageIcon.tsx";
+import {DownloadCVComponent} from "./DownloadCVComponent.tsx";
+import {motion} from "framer-motion";
+import {FlagIcon} from "@heroicons/react/16/solid";
 
 export const Home = () => {
     const cardVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
+        hidden: {opacity: 0, y: 20},
+        visible: {opacity: 1, y: 0},
     };
 
     return (
@@ -30,7 +30,7 @@ export const Home = () => {
                             initial="hidden"
                             animate="visible"
                             variants={cardVariants}
-                            transition={{ duration: 0.5 }}
+                            transition={{duration: 0.5}}
                         >
                             <Card className="flex items-center m-1 border-1 w-[90wh] sm:w-1/3">
                                 <CardHeader className="flex items-center">
@@ -50,7 +50,7 @@ export const Home = () => {
                             initial="hidden"
                             animate="visible"
                             variants={cardVariants}
-                            transition={{ duration: 0.5, delay: 0.2 }}
+                            transition={{duration: 0.5, delay: 0.2}}
                         >
                             <Card className="shadow-none mt-8 mb-8 bg-inherit">
                                 <CardHeader className="pb-0">
@@ -71,61 +71,66 @@ export const Home = () => {
                                                 Hire Me!
                                             </a>
                                         </Button>
-                                        <DownloadCVComponent variant={"bordered"} />
+                                        <DownloadCVComponent variant={"bordered"}/>
                                     </div>
                                 </CardFooter>
                             </Card>
                         </motion.div>
 
-                        <Divider className="my-8" />
+                        <Divider className="my-8"/>
 
                         <motion.div
                             initial="hidden"
                             animate="visible"
                             variants={cardVariants}
-                            transition={{ duration: 0.5, delay: 0.4 }}
+                            transition={{duration: 0.5, delay: 0.4}}
                         >
-                            <Card className="w-full flex justify-between bg-gray-100 p-0 md:p-5 rounded-lg shadow-md">
+                            <Card
+                                className="w-full dark:bg-transparent flex justify-between bg-gray-100 p-0 md:p-5 rounded-lg shadow-md">
                                 <CardBody className="flex flex-col md:flex-row overflow-hidden">
-                                    <Card className="w-full md:w-1/2 shadow-md bg-white rounded-lg m-0 md:m-4 p-0 md:p-4">
+                                    <Card
+                                        className="w-full md:w-1/2 shadow-md dark:border-amber-50 dark:border-1 rounded-lg m-0 md:m-4 p-0 md:p-4">
                                         <CardHeader className="pb-0">
-                                            <h1 className="text-2xl font-bold text-gray-700">
+                                            <h1 className="text-2xl dark:text-white font-bold text-gray-700">
                                                 Personal Details
                                             </h1>
                                         </CardHeader>
-                                        <Divider className="my-3 opacity-50" />
+                                        <Divider className="my-3 opacity-50"/>
                                         <CardBody className="space-y-4">
                                             <div className="flex items-center space-x-3">
-                                                <EmailIcon className={"w-[30px] h-[30px]"} />
+                                                <EmailIcon className={"w-[30px] h-[30px]"}/>
                                                 <p className="text-gray-600">
-                                                    <strong className="text-gray-800">Email:</strong>
-                                                    <a href={`mailto:contact@baptiste-lacroix.fr?subject=${encodeURIComponent('Potential Hire')}`}>
+                                                    <strong className="text-gray-800 dark:text-blue-700">Email:</strong>
+                                                    <a className={'dark:text-white'}
+                                                       href={`mailto:contact@baptiste-lacroix.fr?subject=${encodeURIComponent('Potential Hire')}`}>
                                                         {" "}
                                                         contact@baptiste-lacroix.fr{" "}
                                                     </a>
                                                 </p>
                                             </div>
                                             <div className="flex items-center space-x-3">
-                                                <LanguageIcon className={"w-[30px] h-[30px]"} />
-                                                <p className="text-gray-600">
-                                                    <strong className="text-gray-800">Languages:</strong>{" "}
+                                                <LanguageIcon className={"w-[30px] h-[30px]"}/>
+                                                <p className="text-gray-600 dark:text-white">
+                                                    <strong
+                                                        className="text-gray-800 dark:text-blue-700">Languages:</strong>{" "}
                                                     French | English - B2 - TOEIC (815)
                                                 </p>
                                             </div>
                                             <div className="flex items-center space-x-3">
-                                                <FlagIcon className={"w-[30px] h-[30px]"} />
-                                                <p className="text-gray-600">
-                                                    <strong className="text-gray-800">Nationality:</strong>{" "}
+                                                <FlagIcon className={"w-[30px] h-[30px]"}/>
+                                                <p className="text-gray-600 dark:text-white">
+                                                    <strong
+                                                        className="text-gray-800 dark:text-blue-700">Nationality:</strong>{" "}
                                                     French | Canadian
                                                 </p>
                                             </div>
                                         </CardBody>
                                     </Card>
 
-                                    <Card className="w-full shadow-none bg-white mt-2 sm:m-2">
+                                    <Card className="w-full shadow-none dark:border-amber-50 dark:border-1 mt-2 sm:m-2">
                                         <CardHeader>
                                             <h1 className="font-semibold text-3xl">
-                                                <TypingAnimation />
+                                                <TypingAnimation/>
                                             </h1>
                                         </CardHeader>
                                         <CardBody>
@@ -138,7 +143,7 @@ export const Home = () => {
                                                     I started programming around 2019 with Python, and now
                                                     I work on some personal and school projects.
                                                 </p>
-                                                <br />
+                                                <br/>
                                                 <p>
                                                     🎓 I'm currently studying in work-study at Polytech
                                                     Nice Sophia in computer science and Airbus Defense and
@@ -152,7 +157,7 @@ export const Home = () => {
                                             </div>
                                         </CardBody>
                                         <CardFooter className="text-right">
-                                            <h2 className="font-signature text-3xl text-gray-800 italic">
+                                            <h2 className="font-signature text-3xl text-gray-800 italic dark:text-blue-700">
                                                 Baptiste Lacroix
                                             </h2>
                                         </CardFooter>

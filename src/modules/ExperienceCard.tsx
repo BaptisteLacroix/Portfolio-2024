@@ -40,7 +40,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, d
             <Card
                 className={`relative flex ${
                     isOdd ? "flex-row-reverse" : "flex-row"
-                } items-start p-6 space-x-6 shadow-lg bg-white rounded-xl w-2/3 overflow-visible`}
+                } items-start p-6 space-x-6 shadow-lg rounded-xl w-2/3 overflow-visible dark:border-1 dark:border-amber-50`}
             >
                 {/* Left or Right Section with Icon (Based on isOdd) */}
                 <div
@@ -53,14 +53,14 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, d
 
                 {/* Content Section */}
                 <CardBody className={`${isOdd ? "lg:pr-16 text-right" : "lg:pl-16"}`}>
-                    <h2 className="text-2xl font-semibold text-gray-800 mt-4 max-lg:mt-5 ">{title}</h2>
-                    <p className="text-md text-gray-600">{company}</p>
-                    <p className="text-gray-500 mt-2">{description}</p>
+                    <h2 className="text-2xl font-semibold text-gray-800 mt-4 max-lg:mt-5 dark:text-blue-700">{title}</h2>
+                    <p className="text-md text-gray-600 dark:text-blue-400">{company}</p>
+                    <p className="text-gray-500 mt-2 dark:text-white">{description}</p>
                 </CardBody>
 
                 {/* Right or Left Section (Date, based on isOdd) */}
                 <div className={`absolute top-5 ${isOdd ? "left-5" : "right-5"}`}>
-                    <span className="px-4 py-2 bg-blue-50 text-blue-500 rounded-md font-semibold">{years}</span>
+                    <span className="px-4 py-2 bg-blue-50 text-blue-500 dark:bg-blue-500 dark:text-white rounded-md font-semibold">{years}</span>
                 </div>
             </Card>
         </motion.div>

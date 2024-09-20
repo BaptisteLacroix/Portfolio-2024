@@ -20,7 +20,7 @@ import {useInView} from "react-intersection-observer";
 export const PortfolioComponent = () => {
     return (
         <div className="container mx-auto p-8 min-h-[90vh]">
-            <h1 className="text-3xl font-bold mb-6">My Projects</h1>
+            <h1 className="text-3xl font-bold mb-6 dark:text-blue-700">My Projects</h1>
             <PaginatedCardGrid cards={projects}/>
         </div>
     )
@@ -65,7 +65,7 @@ const Card = React.memo(({card, index, hovered, setHovered}: CardProps) => {
             onClick={() => {
                 if (card.url) window.open(card.url, '_blank')
             }}
-            className={`cursor-pointer rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
+            className={`cursor-pointer dark:border-1 dark:border-amber-50 rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
         >
             <img
                 src={card.img}
@@ -132,7 +132,7 @@ export function PaginatedCardGrid({cards}: { cards: Project[] }) {
                     onChange={(page) => setCurrentPage(page)}
                     showControls
                     className="gap-2"
-                    variant="light"
+                    color={"primary"}
                 />
             </div>
         </div>
