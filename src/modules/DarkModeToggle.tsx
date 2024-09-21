@@ -22,6 +22,7 @@ export const DarkModeToggle: React.FC = () => {
     return (
         <div className="flex items-center space-x-2">
             <Switch
+                aria-label={'Toggle dark mode'}
                 checked={isDarkMode}
                 onChange={toggleTheme}
                 className="mx-2"

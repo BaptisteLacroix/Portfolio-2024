@@ -12,8 +12,10 @@ const ProtectedEmailLink: React.FC<ProtectedEmailLinkProps> = ({message, subject
         .map(char => `%${char.charCodeAt(0).toString(16).toUpperCase()}`)
         .join('');
 
+    const mailto = `mailto:${encodedEmail}${subject ? `?subject=${subject}` : ''}`;
+
     return (
-        <a href={`mailto:${encodedEmail}?subject=${subject}`} {...props}>
+        <a href={mailto} {...props}>
             {message}
         </a>
     );
