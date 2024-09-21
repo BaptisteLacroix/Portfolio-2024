@@ -13,6 +13,7 @@ import {LanguageIcon} from "./icons/personalDetailsIcons/LanguageIcon.tsx";
 import {DownloadCVComponent} from "./DownloadCVComponent.tsx";
 import {motion} from "framer-motion";
 import {FlagIcon} from "@heroicons/react/16/solid";
+import ProtectedEmailLink from "./ProtectedEmailLink.tsx";
 
 export const Home = () => {
     const cardVariants = {
@@ -67,9 +68,7 @@ export const Home = () => {
                                 <CardFooter>
                                     <div className="flex space-x-4">
                                         <Button color={"primary"}>
-                                            <a href={`mailto:contact@baptiste-lacroix.fr?subject=${encodeURIComponent('Potential Hire')}`}>
-                                                Hire Me!
-                                            </a>
+                                            <ProtectedEmailLink message={'Hire Me !'}/>
                                         </Button>
                                         <DownloadCVComponent variant={"bordered"}/>
                                     </div>
@@ -101,11 +100,9 @@ export const Home = () => {
                                                 <EmailIcon className={"w-[30px] h-[30px]"}/>
                                                 <p className="text-gray-600">
                                                     <strong className="text-gray-800 dark:text-blue-700">Email:</strong>
-                                                    <a className={'dark:text-white'}
-                                                       href={`mailto:contact@baptiste-lacroix.fr?subject=${encodeURIComponent('Potential Hire')}`}>
-                                                        {" "}
-                                                        contact@baptiste-lacroix.fr{" "}
-                                                    </a>
+                                                    <ProtectedEmailLink className={'dark:text-white'}
+                                                                        message={' contact@baptiste-lacroix.fr '}
+                                                                        subject={encodeURIComponent('Potential Hire')}/>
                                                 </p>
                                             </div>
                                             <div className="flex items-center space-x-3">
