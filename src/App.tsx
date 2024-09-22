@@ -4,6 +4,7 @@ import {FormationComponent} from "./modules/FormationComponent.tsx";
 import {PortfolioComponent} from "./modules/PortfolioComponent.tsx";
 import SkillsSection from "./modules/SkillsSection.tsx";
 import {useRef} from "react";
+import CreditComponent from "./modules/CreditComponent.tsx";
 
 export default function App() {
     const homeRef = useRef<HTMLDivElement>(null);
@@ -50,6 +51,9 @@ export default function App() {
                 </div>
                 <div ref={skillsRef}>
                     <SkillsSection/>
+                </div>
+                <div>
+                    <CreditComponent/>
                 </div>
             </div>
         </>
