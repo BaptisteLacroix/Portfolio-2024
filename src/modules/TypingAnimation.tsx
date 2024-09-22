@@ -45,7 +45,7 @@ const TypingAnimation: React.FC = () => {
 
     return (
         <>
-            I am <span className={"text-blue-700"}>{displayText}</span>
+            I am <span className={"text-blue-700 dark:text-blue-400"}>{displayText}</span>
             <span className="blinking-cursor"></span>
         </>
     );

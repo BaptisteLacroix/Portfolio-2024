@@ -50,8 +50,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ icon, title, company, d
                 </div>
 
                 <CardBody className={`${isOdd ? "lg:pr-16 text-right" : "lg:pl-16"}`}>
-                    <h2 className="text-2xl font-semibold text-gray-800 mt-4 max-lg:mt-5 dark:text-blue-700">{title}</h2>
-                    <p className="text-md text-gray-600 dark:text-blue-400">{company}</p>
+                    <h2 className="text-2xl font-semibold text-gray-800 mt-4 max-lg:mt-5 dark:text-blue-400">{title}</h2>
+                    <p className="text-md text-gray-600 dark:text-blue-500">{company}</p>
                     <p className="text-gray-500 mt-2 dark:text-white">{description}</p>
                 </CardBody>
 
@@ -136,16 +136,16 @@ export const ExperienceList: React.FC = () => {
                 <Button
                     onPress={() => setCurrentPage(1)}
                     className={`${
-                        currentPage === 1 ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
-                    } hover:bg-blue-500 hover:text-white transition-colors px-4 py-2 rounded-lg`}
+                        currentPage === 1 ? "bg-blue-600 text-white" : "border-2 bg-white border-blue-600 text-blue-600 dark:text-blue-800 dark:bg-gray-200 hover:opacity-80"
+                    } transition-colors px-4 py-2 rounded-lg`}
                 >
                     Education
                 </Button>
                 <Button
                     onPress={() => setCurrentPage(2)}
                     className={`${
-                        currentPage === 2 ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
-                    } hover:bg-blue-500 hover:text-white transition-colors px-4 py-2 rounded-lg`}
+                        currentPage === 2 ? "bg-blue-600 text-white" : "border-2 bg-white border-blue-600 text-blue-600 dark:text-blue-800 dark:bg-gray-200 hover:opacity-80"
+                    } transition-colors px-4 py-2 rounded-lg`}
                 >
                     Experience
                 </Button>

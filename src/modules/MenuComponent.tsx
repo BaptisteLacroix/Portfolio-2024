@@ -52,7 +52,7 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                 {menuItems.map((item, index) => (
                     <NavbarItem key={index} className="hover:text-primary">
                         <Link
-                            className="text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer"
+                            className="text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 dark:text-blue-400 cursor-pointer"
                             onClick={item.onClick}
                         >
                             {item.name}
@@ -67,12 +67,16 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
             {/* Social Icons and Dark Mode Toggle */}
             <NavbarContent className="flex items-center space-x-4 ml-auto" justify="end">
                 <NavbarItem className="cursor-pointer">
-                    <a href={"https://github.com/BaptisteLacroix"} target={"_blank"}>
+                    <a href={"https://github.com/BaptisteLacroix"}
+                       target={"_blank"}
+                       aria-label={"Github"}>
                         <GithubIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600"/>
                     </a>
                 </NavbarItem>
                 <NavbarItem className="cursor-pointer">
-                    <a href={"https://www.linkedin.com/in/lacroix-baptiste/"} target={"_blank"}>
+                    <a href={"https://www.linkedin.com/in/lacroix-baptiste/"}
+                       target={"_blank"}
+                       aria-label={"Linkedin"}>
                         <LinkedinIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600"/>
                     </a>
                 </NavbarItem>

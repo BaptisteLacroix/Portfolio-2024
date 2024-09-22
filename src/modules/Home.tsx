@@ -103,7 +103,7 @@ export const Home = () => {
                                             <div className="flex items-center space-x-3">
                                                 <EmailIcon className={"w-[30px] h-[30px]"}/>
                                                 <p className="text-gray-600">
-                                                    <strong className="text-gray-800 dark:text-blue-700">Email:</strong>
+                                                    <strong className="text-gray-800 dark:text-blue-400">Email:</strong>
                                                     <ProtectedEmailLink className={'dark:text-white'}
                                                                         message={' contact@baptiste-lacroix.fr '}
                                                                         subject={encodeURIComponent('Potential Hire')}/>
@@ -113,7 +113,7 @@ export const Home = () => {
                                                 <LanguageIcon className={"w-[30px] h-[30px]"}/>
                                                 <p className="text-gray-600 dark:text-white">
                                                     <strong
-                                                        className="text-gray-800 dark:text-blue-700">Languages:</strong>{" "}
+                                                        className="text-gray-800 dark:text-blue-400">Languages:</strong>{" "}
                                                     French | English - B2 - TOEIC (815)
                                                 </p>
                                             </div>
@@ -121,7 +121,7 @@ export const Home = () => {
                                                 <FlagIcon className={"w-[30px] h-[30px]"}/>
                                                 <p className="text-gray-600 dark:text-white">
                                                     <strong
-                                                        className="text-gray-800 dark:text-blue-700">Nationality:</strong>{" "}
+                                                        className="text-gray-800 dark:text-blue-400">Nationality:</strong>{" "}
                                                     French | Canadian
                                                 </p>
                                             </div>
@@ -158,7 +158,7 @@ export const Home = () => {
                                             </div>
                                         </CardBody>
                                         <CardFooter className="text-right">
-                                            <h2 className="font-signature text-3xl text-gray-800 italic dark:text-blue-700">
+                                            <h2 className="font-signature text-3xl text-gray-800 italic dark:text-blue-400">
                                                 Baptiste Lacroix
                                             </h2>
                                         </CardFooter>

@@ -21,7 +21,7 @@ export const PortfolioComponent = () => {
     return (
         <div className="container mx-auto p-8 min-h-[90vh] text-center">
             <div className="flex flex-col items-center my-12">
-                <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-700">Personal and Educational
+                <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-400">Personal and Educational
                     Projects</h2>
                 <p className="text-gray-600 mb-8 text-center max-w-lg dark:text-white">
                     Here, you can explore a collection of my personal and educational projects.
@@ -152,6 +152,7 @@ export function PaginatedCardGrid({cards}: { cards: Project[] }) {
 
             <div className="mt-6">
                 <Pagination
+                    aria-label={"Projects Pagination"}
                     total={totalPages}
                     initialPage={currentPage}
                     onChange={(page) => setCurrentPage(page)}

@@ -13,9 +13,10 @@ export const DownloadCVComponent: React.FC<DownloadCVComponentProps> = ({variant
         link.click();
     };
 
+    const className = variant === "solid" ? "bg-primary" : "bg-white dark:bg-gray-200";
     return (
         <Tooltip content="Download my CV">
-            <Button color={"primary"} variant={variant} onClick={handleDownload}>
+            <Button color={"primary"} variant={variant} className={className} onClick={handleDownload}>
                 Download CV
             </Button>
         </Tooltip>

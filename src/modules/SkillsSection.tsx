@@ -66,7 +66,7 @@ const SkillsSection: React.FC = () => {
     return (
         <div className="min-h-[90vh]">
             <div className="flex flex-col items-center my-12">
-                <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-700">Stacks and languages</h2>
+                <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-400">Stacks and languages</h2>
                 <p className="text-gray-600 mb-8 text-center max-w-lg dark:text-white">
                     Here are some of the technologies I have worked with. I am constantly learning new
                     technologies and improving my skills. I am always open to new opportunities to learn and
@@ -97,6 +97,7 @@ const SkillsSection: React.FC = () => {
                 {/* Pagination Controls */}
                 <div className="mt-8">
                     <Pagination
+                        aria-label={"Skills Pagination"}
                         total={Math.ceil(skills.length / itemsPerPage)}
                         initialPage={1}
                         onChange={(page) => setCurrentPage(page)}
