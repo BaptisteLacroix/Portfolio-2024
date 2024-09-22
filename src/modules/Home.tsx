@@ -5,7 +5,7 @@ import {
     CardBody,
     CardFooter,
     CardHeader,
-    Divider,
+    Divider, Tooltip,
 } from "@nextui-org/react";
 import TypingAnimation from "./TypingAnimation.tsx";
 import {EmailIcon} from "./icons/personalDetailsIcons/EmailIcon.tsx";
@@ -67,9 +67,13 @@ export const Home = () => {
                                 </CardBody>
                                 <CardFooter>
                                     <div className="flex space-x-4">
-                                        <Button color={"primary"}>
-                                            <ProtectedEmailLink message={'Hire Me !'}/>
-                                        </Button>
+                                        <a href={"https://www.linkedin.com/in/lacroix-baptiste/"} target={"_blank"}>
+                                            <Tooltip content="Visit my Linkedin">
+                                                <Button color={"primary"}>
+                                                    Hire Me !
+                                                </Button>
+                                            </Tooltip>
+                                        </a>
                                         <DownloadCVComponent variant={"bordered"}/>
                                     </div>
                                 </CardFooter>

@@ -8,9 +8,8 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     Link,
-    Badge
 } from "@nextui-org/react";
-import { DarkModeToggle } from "./DarkModeToggle";
+import {DarkModeToggle} from "./DarkModeToggle";
 import {GithubIcon} from "./icons/navIcons/GithubIcon.tsx";
 import {LinkedinIcon} from "./icons/navIcons/LinkedinIcon.tsx"; // Import your DarkModeToggle component
 
@@ -30,10 +29,10 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        { name: "Home", onClick: onHomeClick },
-        { name: "Formation", onClick: onFormationClick },
-        { name: "Portfolio", onClick: onPortfolioClick },
-        { name: "Skills", onClick: onSkillsClick },
+        {name: "Home", onClick: onHomeClick},
+        {name: "Formation", onClick: onFormationClick},
+        {name: "Portfolio", onClick: onPortfolioClick},
+        {name: "Skills", onClick: onSkillsClick},
     ];
 
     return (
@@ -61,27 +60,21 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                     </NavbarItem>
                 ))}
                 <NavbarItem>
-                    <DarkModeToggle />
+                    <DarkModeToggle/>
                 </NavbarItem>
             </NavbarContent>
 
             {/* Social Icons and Dark Mode Toggle */}
             <NavbarContent className="flex items-center space-x-4 ml-auto" justify="end">
-                <NavbarItem
-                    className="cursor-pointer"
-                    onClick={() => window.open("https://github.com/BaptisteLacroix", "_blank")}
-                >
-                    <Badge color="primary" className="hover:bg-blue-100 dark:hover:bg-gray-800 transition duration-200">
-                        <GithubIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600" />
-                    </Badge>
+                <NavbarItem className="cursor-pointer">
+                    <a href={"https://github.com/BaptisteLacroix"} target={"_blank"}>
+                        <GithubIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600"/>
+                    </a>
                 </NavbarItem>
-                <NavbarItem
-                    className="cursor-pointer"
-                    onClick={() => window.open("https://www.linkedin.com/in/lacroix-baptiste/", "_blank")}
-                >
-                    <Badge color="primary" className="hover:bg-blue-100 dark:hover:bg-gray-800 transition duration-200">
-                        <LinkedinIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600" />
-                    </Badge>
+                <NavbarItem className="cursor-pointer">
+                    <a href={"https://www.linkedin.com/in/lacroix-baptiste/"} target={"_blank"}>
+                        <LinkedinIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600"/>
+                    </a>
                 </NavbarItem>
             </NavbarContent>
 
@@ -99,7 +92,7 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                     </NavbarMenuItem>
                 ))}
                 <NavbarMenuItem>
-                    <DarkModeToggle />
+                    <DarkModeToggle/>
                 </NavbarMenuItem>
             </NavbarMenu>
         </Navbar>

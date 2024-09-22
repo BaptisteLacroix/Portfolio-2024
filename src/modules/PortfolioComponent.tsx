@@ -14,13 +14,24 @@ import {TcpUdpIcon} from "./icons/languages/TcpUdpIcon.tsx";
 import {PythonIcon} from "./icons/languages/PythonIcon.tsx";
 import {WindowsIcon} from "./icons/languages/WindowsIcon.tsx";
 import {AndroidIcon} from "./icons/languages/AndroidIcon.tsx";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 
 export const PortfolioComponent = () => {
     return (
-        <div className="container mx-auto p-8 min-h-[90vh]">
-            <h1 className="text-3xl font-bold mb-6 dark:text-blue-700">My Projects</h1>
+        <div className="container mx-auto p-8 min-h-[90vh] text-center">
+            <div className="flex flex-col items-center my-12">
+                <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-700">Personal and Educational
+                    Projects</h2>
+                <p className="text-gray-600 mb-8 text-center max-w-lg dark:text-white">
+                    Here, you can explore a collection of my personal and educational projects.
+                    These projects reflect my passion for learning and innovation, where I have applied
+                    new technologies and solved challenging problems. Each project showcases my ability
+                    to translate theoretical knowledge into practical solutions, demonstrating my skills
+                    in software development and problem-solving, whether in academic settings or self-initiated
+                    endeavors.
+                </p>
+            </div>
             <PaginatedCardGrid cards={projects}/>
         </div>
     )
@@ -44,38 +55,45 @@ interface CardProps {
  * Card Component with hover effect to display languages
  */
 const Card = React.memo(({card, index, hovered, setHovered}: CardProps) => {
-    const { ref, inView } = useInView({
+    const {ref, inView} = useInView({
         triggerOnce: true,
         threshold: 0.6,
     });
 
     const cardVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0 },
+        hidden: {opacity: 0, y: 50},
+        visible: {opacity: 1, y: 0},
     };
-    return (
+
+    const motion_div: JSX.Element = (
         <motion.div
             ref={ref}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={cardVariants}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{duration: 0.6, ease: "easeOut"}}
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
-            onClick={() => {
-                if (card.url) window.open(card.url, '_blank')
-            }}
-            className={`cursor-pointer dark:border-1 dark:border-amber-50 rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
+            className={`${card.url ? 'cursor-pointer' : ''} dark:border-1 dark:border-amber-50 rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
         >
             <img
                 src={card.img}
                 alt={card.title}
                 className={`object-cover absolute inset-0 w-full h-full hover:scale-100 ${hovered === index ? "scale-110" : ""} transition-transform duration-300 ease-out`}
             />
+            {/* Title Overlay */}
             <div
-                className={`absolute inset-0 bg-black/50 flex py-8 px-4 transition-opacity duration-300 ${hovered === index ? "opacity-100" : "opacity-0"}`}>
+                className="absolute w-full bottom-0 p-3 bg-black/60 text-white font-bold text-xl md:text-2xl transition-opacity duration-300 z-50"
+                style={{opacity: hovered === index ? 1 : 0.9}}
+            >
+                {card.title}
+            </div>
+            <div
+                className={`absolute inset-0 bg-black/50 flex py-8 px-4 transition-opacity duration-300 ${hovered === index ? "opacity-100" : "opacity-0"}`}
+            >
                 <div
-                    className="text-lg md:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+                    className="text-lg md:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200"
+                >
                     {/* Show languages on hover */}
                     <ul>
                         {card.languages.map((language, idx) => (
@@ -87,7 +105,16 @@ const Card = React.memo(({card, index, hovered, setHovered}: CardProps) => {
             </div>
         </motion.div>
     )
+    if (card.url) {
+        return (
+            <a href={card.url} target="_blank">
+                {motion_div}
+            </a>
+        )
+    }
+    return motion_div
 });
+
 
 Card.displayName = "Card";
 
@@ -111,7 +138,6 @@ export function PaginatedCardGrid({cards}: { cards: Project[] }) {
 
     return (
         <div className="flex flex-col items-center">
-            {/* Grid Layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto p-4 w-full">
                 {currentProjects.map((card, index) => (
                     <Card
@@ -124,7 +150,6 @@ export function PaginatedCardGrid({cards}: { cards: Project[] }) {
                 ))}
             </div>
 
-            {/* Pagination Controls */}
             <div className="mt-6">
                 <Pagination
                     total={totalPages}
@@ -142,7 +167,7 @@ export function PaginatedCardGrid({cards}: { cards: Project[] }) {
 const projects: Project[] = [
     {
         title: 'Games on Web 2024',
-        img: './portfolio/games-on-web.png',
+        img: './portfolio/games-on-web.webp',
         url: 'https://tit0u4n.github.io/games-on-web-team-ficsit/',
         languages: [
             {name: 'React', logo: <ReactIcon/>},
@@ -154,7 +179,7 @@ const projects: Project[] = [
     },
     {
         title: 'Merchant Website',
-        img: './portfolio/merchant-website.png',
+        img: './portfolio/merchant-website.webp',
         url: 'https://github.com/BaptisteLacroix/Merchant-Website/',
         languages: [
             {name: 'PHP', logo: <PHPIcon/>},
@@ -165,7 +190,7 @@ const projects: Project[] = [
     },
     {
         title: 'KillBique',
-        img: './portfolio/killbique.jpg',
+        img: './portfolio/killbique.webp',
         languages: [
             {name: 'Java', logo: <JavaIcon/>},
             {name: 'TCP/UDP', logo: <TcpUdpIcon/>},
@@ -173,7 +198,7 @@ const projects: Project[] = [
     },
     {
         title: 'Citadel',
-        img: './portfolio/citadel.jpg',
+        img: './portfolio/citadel.webp',
         url: 'https://github.com/BaptisteLacroix/projet2-pns-23-24-citadels-2024-b',
         languages: [
             {name: 'Java', logo: <JavaIcon/>},
@@ -181,7 +206,7 @@ const projects: Project[] = [
     },
     {
         title: 'Directory',
-        img: './portfolio/S401-annuaire.png',
+        img: './portfolio/S401-annuaire.webp',
         url: 'https://github.com/BaptisteLacroix/SAE401-Annuaire',
         languages: [
             {name: 'Python', logo: <PythonIcon/>},
@@ -193,7 +218,7 @@ const projects: Project[] = [
     },
     {
         title: 'Dechetri',
-        img: './portfolio/dechetri.png',
+        img: './portfolio/dechetri.webp',
         url: 'https://github.com/BaptisteLacroix/DecheTri',
         languages: [
             {name: 'Java', logo: <ReactIcon/>},
@@ -202,8 +227,7 @@ const projects: Project[] = [
     },
     {
         title: 'Yfitops',
-        img: './portfolio/Yfitops.png',
-        url: 'https://github.com/BaptisteLacroix/Yfitops',
+        img: './portfolio/Yfitops.webp',
         languages: [
             {name: 'Java', logo: <ReactIcon/>},
             {name: 'Android', logo: <AndroidIcon/>},
@@ -211,7 +235,7 @@ const projects: Project[] = [
     },
     {
         title: 'Portfolio 2022',
-        img: './portfolio/portfolio-2022.png',
+        img: './portfolio/portfolio-2022.webp',
         url: 'https://github.com/BaptisteLacroix/Portfolio-2022',
         languages: [
             {name: 'HTML', logo: <HtmlIcon/>},
@@ -221,7 +245,7 @@ const projects: Project[] = [
     },
     {
         title: '2048',
-        img: './portfolio/2048.png',
+        img: './portfolio/2048.webp',
         url: 'https://github.com/BaptisteLacroix/2048-js',
         languages: [
             {name: 'Javascript', logo: <JavascriptIcon/>},
@@ -231,7 +255,7 @@ const projects: Project[] = [
     },
     {
         title: 'Taquin',
-        img: './portfolio/taquin.png',
+        img: './portfolio/taquin.webp',
         url: 'https://github.com/BaptisteLacroix/Taquin-js',
         languages: [
             {name: 'Javascript', logo: <JavascriptIcon/>},
@@ -242,7 +266,7 @@ const projects: Project[] = [
     },
     {
         title: 'Space Shooter',
-        img: './portfolio/spaceShooter.jpg',
+        img: './portfolio/spaceShooter.webp',
         url: 'https://github.com/BaptisteLacroix/SpaceShooter',
         languages: [
             {name: 'Python', logo: <PythonIcon/>},
@@ -250,7 +274,7 @@ const projects: Project[] = [
     },
     {
         title: 'Labyrinth',
-        img: './portfolio/labyrinth.jpg',
+        img: './portfolio/labyrinth.webp',
         url: 'https://github.com/BaptisteLacroix/Labyrinthe',
         languages: [
             {name: 'Python', logo: <PythonIcon/>},

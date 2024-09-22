@@ -1,4 +1,4 @@
-import {Button} from "@nextui-org/react";
+import {Button, Tooltip} from "@nextui-org/react";
 import React from "react";
 
 interface DownloadCVComponentProps {
@@ -14,8 +14,10 @@ export const DownloadCVComponent: React.FC<DownloadCVComponentProps> = ({variant
     };
 
     return (
-        <Button color={"primary"} variant={variant} onClick={handleDownload}>
-            Download CV
-        </Button>
+        <Tooltip content="Download my CV">
+            <Button color={"primary"} variant={variant} onClick={handleDownload}>
+                Download CV
+            </Button>
+        </Tooltip>
     );
 };

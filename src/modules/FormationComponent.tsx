@@ -10,7 +10,7 @@ export const FormationComponent: React.FC = () => {
             <div className="w-full lg:w-2/3 p-4 bg-white dark:bg-transparent">
                 <Card className="w-full lg dark:border-1 dark:border-amber-50 rounded-lg ml-0 sm:m-4 p-4">
                     <CardHeader className="pb-0">
-                        <h1 className="text-xl lg:text-2xl font-bold text-gray-700 dark:text-blue-700">Personal Details</h1>
+                        <h1 className="text-xl lg:text-2xl font-bold text-gray-700 dark:text-blue-700">Education & Experience</h1>
                     </CardHeader>
                     <Divider className="my-3 opacity-50" />
                     <CardBody className="space-y-4">
