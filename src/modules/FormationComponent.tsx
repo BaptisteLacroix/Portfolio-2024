@@ -6,7 +6,7 @@ import {DownloadCVComponent} from "./DownloadCVComponent.tsx";
 
 export const FormationComponent: React.FC = () => {
     return (
-        <div className="flex flex-col lg:flex-row justify-center items-start lg:items-center p-6 sm:items-center">
+        <div className="min-h-[100vh] flex flex-col lg:flex-row justify-center items-start lg:items-center p-6 sm:items-center">
             <div className="w-1/4"></div>
             <div className="w-full sm:w-3/4 lg:w-2/3 p-4 dark:bg-transparent">
                 <Card className="w-full lg dark:border-1 dark:border-amber-50 rounded-lg ml-0 sm:m-4 p-4">

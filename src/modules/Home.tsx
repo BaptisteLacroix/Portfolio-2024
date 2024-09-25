@@ -128,7 +128,7 @@ export const Home = () => {
                                         </CardBody>
                                     </Card>
 
-                                    <Card className="w-full shadow-none dark:border-amber-50 dark:border-1 mt-2 sm:m-2">
+                                    <Card className="w-full shadow-md dark:border-amber-50 dark:border-1 mt-2 sm:m-2">
                                         <CardHeader>
                                             <h1 className="font-semibold text-3xl">
                                                 <TypingAnimation/>

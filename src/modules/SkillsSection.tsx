@@ -64,7 +64,7 @@ const SkillsSection: React.FC = () => {
     };
 
     return (
-        <div className="min-h-[90vh]">
+        <div className="min-h-[100vh] flex items-center justify-center">
             <div className="flex flex-col items-center my-12">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-400">Stacks and languages</h2>
                 <p className="text-gray-600 mb-8 text-center max-w-lg dark:text-white">

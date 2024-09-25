@@ -19,7 +19,7 @@ import {useInView} from "react-intersection-observer";
 
 export const PortfolioComponent = () => {
     return (
-        <div className="container mx-auto p-8 min-h-[90vh] text-center">
+        <div className="container mx-auto p-8 min-h-[100vh] text-center">
             <div className="flex flex-col items-center my-12">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-4 dark:text-blue-400">Personal and Educational
                     Projects</h2>
