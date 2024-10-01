@@ -33,7 +33,7 @@ export const Home = () => {
                             variants={cardVariants}
                             transition={{duration: 0.5}}
                         >
-                            <Card className="flex items-center m-1 border-1 w-[90wh] sm:w-1/3">
+                            <Card className="flex items-center m-1 border-1 w-[90wh] mt-[10vh] ms:w-1/3">
                                 <CardHeader className="flex items-center">
                                     <Badge isInvisible={true} shape="circle">
                                         <div className="bg-red-700 rounded-full p-1 pl-2 pr-2 text-white">
