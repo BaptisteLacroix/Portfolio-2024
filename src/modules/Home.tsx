@@ -33,7 +33,7 @@ export const Home = () => {
                             variants={cardVariants}
                             transition={{duration: 0.5}}
                         >
-                            <Card className="flex items-center m-1 border-1 w-[90wh] mt-[10vh] ms:w-1/3">
+                            <Card className="flex items-center m-1 border-1 sw:w-1/3 w-auto mt-[10vh]">
                                 <CardHeader className="flex items-center">
                                     <Badge isInvisible={true} shape="circle">
                                         <div className="bg-red-700 rounded-full p-1 pl-2 pr-2 text-white">
@@ -140,20 +140,16 @@ export const Home = () => {
                                                     💬 My name is Baptiste, I'm 21, I'm Franco-Canadian,
                                                     and I live in France.
                                                 </p>
-                                                <p>
-                                                    I started programming around 2019 with Python, and now
-                                                    I work on some personal and school projects.
+                                                <p className={"mt-5"}>
+                                                    I am currently pursuing my studies in computer science at Polytech
+                                                    Nice Sophia while working as a Full Stack Developer at Airbus
+                                                    Defense and Space. My passion for technology and problem-solving
+                                                    drives me to continually learn and innovate in software development.
                                                 </p>
-                                                <br/>
-                                                <p>
-                                                    🎓 I'm currently studying in work-study at Polytech
-                                                    Nice Sophia in computer science and Airbus Defense and
-                                                    Space.
-                                                </p>
-                                                <p>
-                                                    Before going to Polytech, I completed my BUT in
-                                                    computer science at the IUT of Nice, ending at the top
-                                                    of my class.
+                                                <p className={"mt-5"}>
+                                                    I enjoy tackling challenging projects, whether academic or personal,
+                                                    where I can apply my skills in Python and other programming
+                                                    languages.
                                                 </p>
                                             </div>
                                         </CardBody>
