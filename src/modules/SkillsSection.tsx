@@ -23,6 +23,7 @@ import { MysqlIcon } from "./icons/languages/MysqlIcon.tsx";
 import { PostgreSQLIcon } from "./icons/languages/PostgreSQLIcon.tsx";
 import { SQLiteIcon } from "./icons/languages/SQLiteIcon.tsx";
 import { NextUIBlackIcon } from "./icons/languages/NextUIBlackIcon.tsx";
+import { CsharpIcon } from "./icons/languages/CSharpIcon.tsx";
 
 const skills = [
     { name: "Java", icon: <JavaIcon className="w-12 h-12" /> },
@@ -38,6 +39,7 @@ const skills = [
     { name: "HTML", icon: <HtmlIcon className="w-12 h-12" /> },
     { name: "CSS", icon: <CssIcon className="w-12 h-12" /> },
     { name: "C", icon: <CIcon /> },
+    { name: "C#", icon: <CsharpIcon className="w-12 h-12" /> },
     { name: "Lua", icon: <LuaIcon className="w-12 h-12" /> },
     { name: "Gitlab", icon: <GitlabIcon className="w-12 h-12" /> },
     { name: "Git", icon: <GitIcon className="w-12 h-12" /> },

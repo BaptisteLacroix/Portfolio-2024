@@ -20,6 +20,11 @@ export const Home = () => {
         hidden: {opacity: 0, y: 20},
         visible: {opacity: 1, y: 0},
     };
+    const getAge = () => {
+        const birthDate = new Date(2003, 5, 20);
+        const currentDate = new Date();
+        return currentDate.getFullYear() - birthDate.getFullYear();
+    }
 
     return (
         <>
@@ -33,7 +38,7 @@ export const Home = () => {
                             variants={cardVariants}
                             transition={{duration: 0.5}}
                         >
-                            <Card className="flex items-center m-1 border-1 sw:w-1/3 w-auto mt-[10vh]">
+                            {/* <Card className="flex items-center m-1 border-1 sw:w-1/3 w-auto mt-[10vh]">
                                 <CardHeader className="flex items-center">
                                     <Badge isInvisible={true} shape="circle">
                                         <div className="bg-red-700 rounded-full p-1 pl-2 pr-2 text-white">
@@ -44,7 +49,7 @@ export const Home = () => {
                                         Looking for an internship!
                                     </div>
                                 </CardHeader>
-                            </Card>
+                            </Card> */}
                         </motion.div>
 
                         <motion.div
@@ -114,7 +119,7 @@ export const Home = () => {
                                                 <p className="text-gray-600 dark:text-white">
                                                     <strong
                                                         className="text-gray-800 dark:text-blue-400">Languages:</strong>{" "}
-                                                    French | English - B2 - TOEIC (815)
+                                                    French | English - B2 - TOEIC (830)
                                                 </p>
                                             </div>
                                             <div className="flex items-center space-x-3">
@@ -137,7 +142,7 @@ export const Home = () => {
                                         <CardBody>
                                             <div className="text-md text-left pl-2">
                                                 <p>
-                                                    💬 My name is Baptiste, I'm 21, I'm Franco-Canadian,
+                                                    💬 My name is Baptiste, I'm {getAge()}, I'm Franco-Canadian,
                                                     and I live in France.
                                                 </p>
                                                 <p className={"mt-5"}>
