@@ -17,17 +17,13 @@ export const FormationComponent: React.FC = () => {
                     <Divider className="my-3 opacity-50"/>
                     <CardBody className="space-y-4">
                         <div className="flex items-center space-x-3 sm:justify-center">
-                            <FlagIcon className="w-[30px] h-[30px]"/>
+                            <FlagIcon className="w-[48px] h-[48px]"/>
                             <div>
                                 <p className="text-gray-600 text-sm lg:text-base dark:text-white">
                                     I am a student at Polytech Nice Sophia and a Full Stack Developer.
                                 </p>
                                 <p className="text-gray-600 text-sm lg:text-base dark:text-white">
                                     Apprentice at Airbus Defense and Space, responsible for software development.
-                                </p>
-                                <p className="text-sm lg:text-base dark:text-white">
-                                    I'm currently looking for an opportunity to work as an intern in software
-                                    development.
                                 </p>
                             </div>
                         </div>
