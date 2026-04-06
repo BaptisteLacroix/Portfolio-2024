@@ -1,0 +1,105 @@
+{
+    "home": {
+        "hello": "Salut, je suis Baptiste Lacroix",
+        "description": "💬 Je suis en alternance chez Airbus Defense and Space et étudiant à Polytech Nice Sophia",
+        "hireMe": "Embauchez-moi !",
+        "visitLinkedin": "Visitez mon Linkedin",
+        "jobStatus": "À la recherche d'un poste d'ingénieur logiciel !",
+        "downloadCv": "Télécharger le CV",
+        "downloadCvTooltip": "Télécharger mon CV",
+        "cvFileName": "cv/cv_Lacroix_baptiste_ingenieur_logiciel.pdf"
+    },
+    "skills": {
+        "title": "Stacks et langages",
+        "description": "Voici quelques-unes des technologies avec lesquelles j'ai travaillé. J'apprends constamment de nouvelles technologies et j'améliore mes compétences. Je suis toujours ouvert à de nouvelles opportunités pour apprendre et grandir."
+    },
+    "portfolio": {
+        "title": "Projets personnels et éducatifs",
+        "description": "Ici, vous pouvez explorer une collection de mes projets personnels et éducatifs. Ces projets reflètent ma passion pour l'apprentissage et l'innovation, où j'ai appliqué de nouvelles technologies et résolu des problèmes stimulants. Chaque projet illustre ma capacité à traduire des connaissances théoriques en solutions pratiques, démontrant mes compétences en développement logiciel."
+    },
+    "projects_desc": {
+        "thermoscanai": "1ère Place, Projet Pluri-Disciplinaire (plus de 20 équipes).\n\nThermoScanAI combine des drones autonomes et l'Intelligence Artificielle (CNN U-Net, LLM multimodal) pour détecter et surveiller les îlots de chaleur urbains.\n\nEn remplaçant l'imagerie satellite par des survols de drones récurrents, notre solution offre une cartographie thermique avec une précision centimétrique. Le moteur d'IA suit l'évolution des températures au fil du temps et propose automatiquement aux villes les interventions urbaines les plus efficaces (ex. toitures végétalisées, désimperméabilisation) pour optimiser le rafraîchissement urbain, avec une estimation du ROI et de l'impact environnemental.\n\nMembre actif sur l'ensemble du cycle de projet : définition du besoin, conception de l'architecture, analyse des coûts et présentation du business plan aux jurys.",
+        "serveurless": "Durant le 1er semestre de ma 3ème année de cycle ingénieur, j'ai travaillé dans une équipe de 5 personnes pour réaliser une application web nommée Serveurless. C'est une application de borne de commmande pour restauration rapide qui permet aux clients de passer commande et de payer sans interaction humaine.\n\nUn backend minimal nous a été fourni, nous avons eu à développer un backend for frontend pour intégrer les fonctionnalités manquantes en Node.js avec Express et une interface utilisateur en React. Un maximum de composants réutilisables ont été développés pour faciliter l'évolution future de l'application. Nous devions porter une attention particulière à l'ajout de filtres selon les régimes alimentaires, à la capacité de personnalisation de chaque plat et l'intégration d'un moyen pour permettre à plusieurs clients de commander ensemble tout en leur permettant de payer chacun leur part séparément.\n\nL'application permet de naviguer dans le menu, personnaliser les plats, ajouter des articles au panier, et finaliser la commande avec un paiement détaillé.",
+        "healthtracker": "Durant le 1er semestre de ma 3ème année de cycle ingénieur, nous avons réalisé un système de suivi de santé à domicile pour les personnes âgées.\n\nEn équipe de 5, nous avons conçu une solution complète permettant de mesurer et transmettre automatiquement différents paramètres physiologiques (poids, pouls, température, nombre de pas) aux acteurs concernés : médecins, infirmiers et proches.\n\nLe système s'appuie sur une architecture IoT à trois niveaux : des dispositifs connectés (montres, balance), une station IoT Gateway locale avec une pipeline de traitement basée sur NATS, et des services cloud pour le stockage persistant. La station collecte les données via Bluetooth, les traite localement et les synchronise avec le cloud via une API REST développée avec Node.js et TypeScript.\n\nCe projet inclut également un système d'alertes automatiques pour les médecins en cas d'anomalies, des notifications hebdomadaires pour les proches via Discord, et une interface web permettant aux professionnels de santé de consulter les données depuis une base PostgreSQL.",
+        "terranumeria": "Durant le 2ème semestre de ma 2ème année de cycle ingénieur, j’ai travaillé en collaboration avec Terra Numerica pour réaliser un nouvel atelier de médiation. En équipe de 3, nous avons donc créer un outil permettant d’expérimenter le fonctionnement des LLMs tels que ChatGPT. Cette plateforme est utilisée par les animateurs de TerraNumerica pour faire expérimenter la génération de phrase par IA aux personnes qui visitent le lieu totem Terra Numerica @Sophia.\n\nNous avons donc développé une interface web avec React et un API REST Python avec Flask qui communique avec un modèle de langage récupéré depuis HuggingFace et exécuté localement. L’interface permet donc de dialoguer un LLM en configurant différents paramètres tels que le prompt système, la température ou le top-p. Elle permet aussi d’afficher la séparation entre chaque token et la probabilité de génération de chacun.",
+        "games_on_web": "Développé dans le cadre du tournoi Games On Web, 'Olympic Odyssey' est un jeu 4X de stratégie et d'aventure innovant inspiré de 'For the King' et 'Baldur's Gate III'. Plongés dans l'univers des Jeux Olympiques, les joueurs explorent une carte d'île hexagonale générée procéduralement avec un bruit de Perlin, où ils construisent des centres d'entraînement et s'affrontent dans des arènes pour gagner des points d'équipes.\n\nLe jeu repose sur un modèle MVP mêlant l'UI React et BabylonJS pour des graphismes 3D immersifs. Nous avons implémenté des mécaniques avancées telles que le lancer de dés physiques en 3D avec Havok (Wasm), des optimisations de rendu via des ThinInstances pour plus de 20 000 éléments de décor, des animations de squelettes personnalisées, et un système de pathfinding dynamique basé sur des graphes de positionnements.",
+        "merchant_website": "Ce projet est un site e-commerce complet qui permet aux utilisateurs de créer un compte, de se connecter et d'effectuer des achats. Le backend a été développé en PHP avec une gestion des bases de données opérée via MySQL et phpMyAdmin. Il utilise l'API PayPal pour le traitement des paiements ainsi que la fonction mail native de PHP pour les envois d'emails de confirmations et de résumés.\n\nLe site offre également un tableau de bord (dashboard) dédié aux administrateurs. Ces derniers ont un accès privilégié aux informations sur les fournisseurs, les clients, ainsi qu'aux vues d'ensemble sur les performances annuelles soutenues par ChartJs. La gestion de l'inventaire en tant qu'administrateur prend en charge l'ajout, la modification, la suppression et la recherche parmi les divers articles. Projet développé dans le cadre de mon cursus à l'IUT de Nice Côte d'Azur.",
+        "killbique": "Un projet réseau en Java basé sur des protocoles TCP/UDP. Ce projet implémente l'envoi de paquets et la gestion multi-clients.",
+        "citadel": "Dans le cadre de ma 1ère année d'étude en cycle ingénieur à Polytech Nice Sophia, trois camarades et moi-même avons réalisé cette version numérique du jeu Citadelles 1ère édition.\n\nDans ce projet, le jeu a été développé en java et entièrement automatisé pour permettre de lancer des parties avec jusqu'à 6 robots qui s'affrontent entre eux. Un maximum de log ont été mis en place pour suivre le déroulement de la partie au mieux et analyser les stratégies des différents robots.\n\nNous avons ainsi implémenté le fonctionnement complet du jeu, incluant la gestion des personnages, des quartiers, des pièces d'or, ainsi que les règles spécifiques à chaque carte. Ce projet m'a permis de renforcer mes compétences en programmation orientée objet et en gestion de projet en équipe.",
+        "directory": "Une application de répertoire d'entreprise synchronisée avec Active Directory pour rechercher et gérer les employés d'une entreprise de manière fluide.",
+        "dechetri": "Durant ma première année de cycle ingénieur, j'ai développé une application Android nommée DecheTri en Java. Cette application vise à repondre au besoin des communes de mieux gérer les déchets, notamment en permettant aux citoyens de signaler les dépôts sauvages via une interface, fournissant aux agents municipaux des informations précises pour une intervention rapide et un moyen de communication pour la mairie avec les citoyens.\n\nDes contraintes techniques étaient imposées telles que l'intégration d'une carte OpenStreetMap, la gestion de la prise de photo, la géolocalisation, l'utilisation de fragments pour l'interface, et la communication avec un backend via une API REST.",
+        "yfitops": "Un clone conceptuel musical visant à explorer les bonnes méthodes de développement UI/UX sur mobile et des requêtes d'API natives.",
+        "portfolio_2022": "L'ancien design de mon portfolio datant de 2022. Rendu entièrement responsive avec du Vanilla JS, CSS et HTML.",
+        "2048": "Un clone complet du célèbre jeu de réflexion '2048', développé strictement en JavaScript pur (Vanilla) sans utiliser de bibliothèques tierces, réalisé dans le cadre d'un module d'études supérieur avancé.\n\nLe projet se concentre fortement sur la séparation claire entre la logique du jeu (le noyau fonctionnel gérant les fusions multi-directionnelles des tableaux, l'insertion probabiliste des tuiles 2 ou 4) et la couche de présentation manipulant le DOM. Implémente des algorithmes complexes pour tasser, fusionner, puis re-tasser les éléments des lignes/colonnes afin de reproduire parfaitement la mécanique de glissement originale.",
+        "taquin": "Un jeu de taquin avec plusieurs niveaux de difficulté et des algorithmes de résolution automatique développés avec des technologies web et Python.",
+        "space_shooter": "Un jeu d'arcade classique programmé en Python. Vagues infinies, boss, et un système de score complet avec Pygame.",
+        "labyrinth": "Un visualisateur de labyrinthes en Python générés de manière procédurale et la visualisation des algorithmes de résolution comme A* et BFS."
+    },
+    "common": {
+        "close": "Fermer",
+        "live_demo": "Démo"
+    },
+    "menu": {
+        "home": "Accueil",
+        "formation": "Formation",
+        "portfolio": "Portfolio",
+        "skills": "Compétences"
+    },
+    "experience": {
+        "education": {
+            "polytech": {
+                "role": "Diplôme d'ingénieur - En informatique",
+                "description": "Étudiant en ingénierie informatique à Polytech Nice Sophia, spécialisé en ingénierie logicielle."
+            },
+            "iut": {
+                "role": "BUT - Informatique",
+                "description": "Diplômé d'un DUT en informatique de l'IUT Nice Côte d'Azur, spécialisé en développement logiciel."
+            }
+        },
+        "work": {
+            "mcmaster": {
+                "role": "CDD d'été - Assistant de Recherche II",
+                "description": "Travail sur le développement et l'amélioration du logiciel JPipe‑Runner pour les pipelines d'exécution et de tests automatisés. Recherche sur la Modélisation d'Objectifs pour représenter et analyser formellement les propriétés FATES.",
+                "years": "4 mois - 2026"
+            },
+            "airbus": {
+                "role": "Apprenti - Ingénieur Logiciel",
+                "description": "En apprentissage en tant qu'ingénieur logiciel chez Airbus Defense and Space, spécialisé en développement logiciel."
+            },
+            "busit": {
+                "role": "Stage d'été - Développeur Logiciel",
+                "description": "Stage en tant que développeur full stack chez Busit SAS, spécialisé en développement web.",
+                "years": "4 mois - 2023"
+            }
+        }
+    },
+    "projects": {
+        "thermoscanai": "ThermoScanAI",
+        "serveurless": "Serveurless",
+        "healthtracker": "HealthTracker",
+        "terranumeria": "TerraNumerIA",
+        "games_on_web": "Olympic Odyssey",
+        "merchant_website": "Site Marchand",
+        "killbique": "Serveur & Client TCP/UDP",
+        "citadel": "Citadelle",
+        "directory": "Interfaceur Active Directory",
+        "dechetri": "DecheTri",
+        "yfitops": "Yfitops",
+        "portfolio_2022": "Portfolio 2022",
+        "2048": "2048",
+        "taquin": "Taquin Automatique",
+        "space_shooter": "Space Shooter",
+        "labyrinth": "Générateur de Labyrinthe"
+    },
+    "aboutMe": {
+        "text1": "💬 Je m'appelle Baptiste, j'ai {{age}} ans, je suis Franco-Canadien et je vis en France.",
+        "text2": "Je poursuis actuellement mes études en informatique à Polytech Nice Sophia tout en travaillant comme Développeur Full Stack chez Airbus Defense and Space. Ma passion pour la technologie et la résolution de problèmes me pousse à apprendre continuellement et à innover en développement logiciel.",
+        "text3": "J'aime relever des défis sur des projets stimulants, qu'ils soient académiques ou personnels, où je peux appliquer mes compétences en Python et d'autres langages de programmation."
+    },
+    "typing": {
+        "prefix": "Je suis ",
+        "developer": "un ingénieur logiciel",
+        "solver": "",
+        "position": "activement à la recherche d'opportunités en ingénierie logicielle"
+    }
+}

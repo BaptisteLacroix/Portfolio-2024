@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 const TypingAnimation: React.FC = () => {
+    const { t, i18n } = useTranslation();
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    const age = () => {
-        if (new Date().getMonth() > 4 || (new Date().getMonth() === 4 && new Date().getDate() >= 20)) {
-            return new Date().getFullYear() - 2003;
-        }
-        return new Date().getFullYear() - 2003 - 1;
-    }
-
+    const getWordList = () => {
+        return [
+            t("typing.developer"),
+            t("typing.solver"),
+            t("typing.position")
+        ];
+    };
 
     useEffect(() => {
-        const wordList = ['a Student', 'a Full Stack Developer', age().toString(), 'Looking for an Internship'];
+        const wordList = getWordList();
         const handleTyping = () => {
             const currentWord = wordList[loopNum % wordList.length];
             const updatedText = isDeleting
@@ -41,11 +43,11 @@ const TypingAnimation: React.FC = () => {
         const typingTimeout = setTimeout(handleTyping, typingSpeed);
 
         return () => clearTimeout(typingTimeout);
-    }, [displayText, isDeleting, loopNum, typingSpeed]);
+    }, [displayText, isDeleting, loopNum, typingSpeed, i18n.language]);
 
     return (
         <>
-            I am <span className={"text-blue-700 dark:text-blue-400"}>{displayText}</span>
+            {t("typing.prefix")}<span className={"text-blue-700 dark:text-blue-400"}>{displayText}</span>
             <span className="blinking-cursor"></span>
         </>
     );

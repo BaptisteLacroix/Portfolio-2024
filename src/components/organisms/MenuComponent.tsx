@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
     Navbar,
     NavbarBrand,
@@ -9,9 +10,9 @@ import {
     NavbarMenuItem,
     Link,
 } from "@nextui-org/react";
-import {DarkModeToggle} from "./DarkModeToggle";
-import {GithubIcon} from "./icons/navIcons/GithubIcon.tsx";
-import {LinkedinIcon} from "./icons/navIcons/LinkedinIcon.tsx"; // Import your DarkModeToggle component
+import { DarkModeToggle } from "../atoms/DarkModeToggle";
+import { GithubIcon } from "../atoms/icons/navIcons/GithubIcon";
+import { LinkedinIcon } from "../atoms/icons/navIcons/LinkedinIcon";
 
 interface MenuComponentProps {
     onHomeClick: () => void;
@@ -26,13 +27,14 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                                                                 onPortfolioClick,
                                                                 onSkillsClick,
                                                             }) => {
+    const { t } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        {name: "Home", onClick: onHomeClick},
-        {name: "Formation", onClick: onFormationClick},
-        {name: "Portfolio", onClick: onPortfolioClick},
-        {name: "Skills", onClick: onSkillsClick},
+        {name: t("menu.home", "Home"), onClick: onHomeClick},
+        {name: t("menu.formation", "Formation"), onClick: onFormationClick},
+        {name: t("menu.portfolio", "Portfolio"), onClick: onPortfolioClick},
+        {name: t("menu.skills", "Skills"), onClick: onSkillsClick},
     ];
 
     return (
@@ -43,7 +45,16 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                     className="sm:hidden"
                 />
                 <NavbarBrand className="flex items-center space-x-3">
-                    <span className="text-xl font-bold text-gray-800 dark:text-gray-200">Baptiste Lacroix</span>
+                    <img
+                        src="logo_transparent.png"
+                        width="40"
+                        height="40"
+                        alt="logo"
+                        className="block md:hidden"
+                    />
+                    <span className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                        Baptiste Lacroix
+                    </span>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -65,7 +76,7 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
             </NavbarContent>
 
             {/* Social Icons and Dark Mode Toggle */}
-            <NavbarContent className="flex items-center space-x-4 ml-auto" justify="end">
+            <NavbarContent className="hidden sm:flex items-center space-x-4 ml-auto" justify="end">
                 <NavbarItem className="cursor-pointer">
                     <a href={"https://github.com/BaptisteLacroix"}
                        target={"_blank"}
@@ -97,6 +108,24 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                 ))}
                 <NavbarMenuItem>
                     <DarkModeToggle/>
+                </NavbarMenuItem>
+                {/* Social icons in mobile menu */}
+                <NavbarMenuItem className="flex gap-4 mt-4">
+                    <a
+                        href="https://github.com/BaptisteLacroix"
+                        target="_blank"
+                        aria-label="Github"
+                    >
+                        <GithubIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600" />
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/lacroix-baptiste/"
+                        target="_blank"
+                        aria-label="Linkedin"
+                    >
+                        <LinkedinIcon className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-600" />
+                    </a>
                 </NavbarMenuItem>
             </NavbarMenu>
         </Navbar>

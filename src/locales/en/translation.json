@@ -1,0 +1,105 @@
+{
+    "home": {
+        "hello": "Hey I'm Baptiste Lacroix",
+        "description": "💬 I’m in work-study at Airbus Defense and Space and studying at Polytech Nice Sophia",
+        "hireMe": "Hire Me !",
+        "visitLinkedin": "Visit my Linkedin",
+        "jobStatus": "Looking for a Software Engineering position!",
+        "downloadCv": "Download CV",
+        "downloadCvTooltip": "Download my CV",
+        "cvFileName": "cv/cv_Lacroix_baptiste_software_engineer.pdf"
+    },
+    "skills": {
+        "title": "Stacks and languages",
+        "description": "Here are some of the technologies I have worked with. I am constantly learning new technologies and improving my skills. I am always open to new opportunities to learn and grow."
+    },
+    "portfolio": {
+        "title": "Personal and Educational Projects",
+        "description": "Here, you can explore a collection of my personal and educational projects. These projects reflect my passion for learning and innovation, where I have applied new technologies and solved challenging problems. Each project showcases my ability to translate theoretical knowledge into practical solutions, demonstrating my skills in software development and problem-solving, whether in academic settings or self-initiated endeavors."
+    },
+    "projects": {
+        "thermoscanai": "ThermoScanAI",
+        "serveurless": "Serveurless",
+        "healthtracker": "HealthTracker",
+        "terranumeria": "TerraNumerIA",
+        "games_on_web": "Olympic Odyssey",
+        "merchant_website": "Merchant Website",
+        "killbique": "TCP/UDP Server & Client",
+        "citadel": "Citadelle",
+        "directory": "Active Directory Interfacer",
+        "dechetri": "DecheTri",
+        "yfitops": "Yfitops",
+        "portfolio_2022": "Portfolio 2022",
+        "2048": "2048",
+        "taquin": "Automated Taquin",
+        "space_shooter": "Space Shooter",
+        "labyrinth": "Maze Generator"
+    },
+    "projects_desc": {
+        "thermoscanai": "1st Place, Interdisciplinary Project Challenge (20+ teams).\n\nThermoScanAI combines autonomous drones and Artificial Intelligence (U-Net CNNs, Multimodal LLMs) to detect and monitor urban heat islands. \n\nInstead of relying on low-resolution satellite imagery, our solution uses recurring drone flights to generate centimeter-level thermal mapping. The AI engine tracks temperature deviations over time and automatically prescribes the most effective urban interventions (e.g., green roofs, surface material changes) to optimize city cooling, complete with ROI and environmental impact estimates.\n\nActive in the full project lifecycle: problem definition, architecture design, cost analysis, and pitching to stakeholders.",
+        "serveurless": "During the 1st semester of my 3rd year in the engineering cycle, I worked in a team of 5 people to build a web application named Serveurless. It is a fast-food ordering kiosk application that allows customers to place orders and pay without human interaction.\n\nGiven a minimal backend provided to us, we developed a backend-for-frontend in Node.js (with Express) to integrate the missing features, along with a user interface in React. A maximum of reusable components were developed to facilitate future evolution of the application. We paid particular attention to adding dietary filters, the ability to customize each dish, and integrating a feature allowing multiple customers to order together while splitting the bill so each can pay their share separately.\n\nThe application allows navigating the menu, customizing dishes, adding items to the cart, and finalizing the order with a detailed payment breakdown.",
+        "healthtracker": "During the 1st semester of my 3rd year in the engineering cycle, we created a home health monitoring system for the elderly.\n\nIn a team of 5, we designed a complete solution to automatically measure and transmit physiological parameters (weight, pulse, temperature, step count) to doctors, nurses, and relatives.\n\nThe system relies on a 3-tier IoT architecture: Bluetooth connected devices, a local IoT Gateway with a processing pipeline based on NATS, and cloud services for persistent storage via a Node.js/TypeScript REST API.\n\nThis project also includes automatic alerts for doctors in case of anomalies, weekly Discord notifications for relatives, and a web interface allowing healthcare professionals to consult patient data stored on a PostgreSQL database.",
+        "terranumeria": "During the 2nd semester of my 2nd year in the engineering cycle, I worked in collaboration with Terra Numerica to create a new educational workshop. In a team of 3, we built a tool to experiment with how LLMs like ChatGPT work.\n\nWe developed a web interface with React and a REST API in Python with Flask that communicates with a language model loaded from HuggingFace and executed locally. Built for Terra Numerica @Sophia, it allows users to dialogue with an AI, tweak generation parameters (temperature, top-p, prompt), and observe token-by-token generation with probablity scores.",
+        "games_on_web": "Developed for the Games On Web tournament, 'Olympic Odyssey' is an innovative strategy, management, and adventure game inspired by titles like 'For the King' and 'Baldur's Gate III'. Set in the thrilling world of the Olympic Games, players explore a procedurally generated hexagonal island map (using Perlin noise), build training centers, and compete in arenas to earn points.\n\nThe game features a robust technical architecture on the MVP pattern, combining React for the UI and BabylonJS for immersive 3D graphics. We implemented advanced mechanics such as 3D physics-based dice rolling via Havok (WebAssembly), massive rendering optimizations using ThinInstances for over 20,000 environment assets, custom bone animations for 3D characters, and a graph-based pathfinding system for movements on the grid.",
+        "merchant_website": "This project is a complete eCommerce website that allows users to create an account, log in, and make purchases. The backend is built using PHP, while the database is managed using MySQL. It utilizes the PayPal API for payment processing and PHP mail function for sending confirmation emails.\n\nIn addition to customer-facing functionality, the website includes a comprehensive dashboard for administrators. Webmasters can manage suppliers, customers, and view yearly performance metrics powered by ChartJs. Administrators also handle product stock, with features to add, modify, delete, and search across tables. This project was developed as part of my university curriculum at IUT Nice Côte d'Azur.",
+        "killbique": "A Java-based network project involving TCP/UDP communications. Focused on implementing robust packet exchanges and managing multiple client sockets simultaneously.",
+        "citadel": "As part of my 1st year of engineering studies at Polytech Nice Sophia, three classmates and I created this digital version of the 1st edition Citadels board game.\n\nIn this project, the game was developed in Java and fully automated to allow matches with up to 6 bots competing against each other. Extensive logging was implemented to track the flow of the game as accurately as possible and to analyze the strategies of the different bots.\n\nWe implemented the complete game mechanics, including the management of characters, districts, gold coins, and the specific rules for each card. This project allowed me to strengthen my skills in object-oriented programming and teamwork.",
+        "directory": "A corporate directory application that interfaces with an Active Directory to list, search, and manage user details seamlessly within a company network.",
+        "dechetri": "During my first year of the engineering cycle, I developed an Android application named DecheTri in Java. This application aims to meet the needs of municipalities to better manage waste, notably by allowing citizens to report illegal dumping via an interface, providing municipal agents with precise information for rapid intervention and a communication channel for the town hall with citizens.\n\nTechnical constraints were imposed such as the integration of an OpenStreetMap, managing photo capture, geolocation, using fragments for the interface, and communicating with a backend via a REST API.",
+        "yfitops": "A conceptual clone/helper app that explores mobile UI/UX in an Android ecosystem using responsive layouts and native APIs.",
+        "portfolio_2022": "My previous portfolio website built to showcase my early projects. A static and responsive site built entirely with vanilla web technologies.",
+        "2048": "A complete clone of the popular '2048' puzzle game, developed strictly in pure JavaScript without relying on external libraries. Built as part of an advanced university JavaScript module.\n\nThe project focuses strongly on cleanly separating the game logic (functional core handling multi-directional array merges, grid generation, random tile insertion probabilities) from the presentation layer manipulating the DOM. Features complex algorithms to compress, merge, and re-compress array elements to mimic the original game's sliding behaviors perfectly.",
+        "taquin": "A slide puzzle game (15-puzzle) with multiple difficulty levels and a solver algorithm built using standard web technologies and occasionally bridged with Python for logic.",
+        "space_shooter": "An arcade space shooter developed in Python using Pygame. Features endless waves, power-ups, and a scoring system.",
+        "labyrinth": "A Python-based maze generation and pathfinding visualizer. Explores various algorithms like DFS, BFS, and A* to navigate complex mazes."
+    },
+    "common": {
+        "close": "Close",
+        "live_demo": "Live Demo"
+    },
+    "menu": {
+        "home": "Home",
+        "formation": "Formation",
+        "portfolio": "Portfolio",
+        "skills": "Skills"
+    },
+    "experience": {
+        "education": {
+            "polytech": {
+                "role": "Master's degree - In computer engineering",
+                "description": "Studying computer engineering at Polytech Nice Sophia, specializing in software engineering."
+            },
+            "iut": {
+                "role": "BUT - Computer Science",
+                "description": "Graduated with a DUT in computer science from IUT Nice Côte d'Azur, specializing in software development."
+            }
+        },
+        "work": {
+            "mcmaster": {
+                "role": "Summer Fixed-Term Contract - Research Assistant II",
+                "description": "Worked on the development and enhancement of the JPipe‑Runner software for automated execution and testing pipelines. Conducted research on Goal Modeling to formally represent and analyze FATES properties.",
+                "years": "4 month - 2026"
+            },
+            "airbus": {
+                "role": "Apprentice - Software Engineer",
+                "description": "Working as an apprentice software engineer at Airbus Defense and Space, specializing in software development."
+            },
+            "busit": {
+                "role": "Summer Internship - Software Developer",
+                "description": "Internship as a full stack developer at Busit SAS, specializing in web development.",
+                "years": "4 month - 2023"
+            }
+        }
+    },
+    "aboutMe": {
+        "text1": "💬 My name is Baptiste, I'm {{age}}, I'm Franco-Canadian, and I live in France.",
+        "text2": "I am currently pursuing my studies in computer science at Polytech Nice Sophia while working as a Full Stack Developer at Airbus Defense and Space. My passion for technology and problem-solving drives me to continually learn and innovate in software development.",
+        "text3": "I enjoy tackling challenging projects, whether academic or personal, where I can apply my skills in Python and other programming languages."
+    },
+    "typing": {
+        "prefix": "I am ",
+        "developer": "a Software Engineer",
+        "solver": "",
+        "position": "actively seeking for a Software Engineering opportunities"
+    }
+}
