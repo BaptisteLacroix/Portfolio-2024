@@ -52,3 +52,15 @@ export const EXPERIENCE_DATA: ExperienceCardProps[] = [
         countryFlagIcon: <FrenchFlagIcon />,
     },
 ];
+
+export const PUBLICATIONS_DATA: ExperienceCardProps[] = [
+    {
+        icon: <McMasterUniversityIcon className="rounded-full" />,
+        title: "McMaster’s Centre for Software Certification (McSCert)",
+        role: "experience.publications.model_cards.role",
+        description: "experience.publications.model_cards.description",
+        years: "experience.publications.model_cards.years",
+        countryFlagIcon: <CanadianFlagIcon />,
+        url: "https://conf.researchr.org/details/icse-2026/icse-2026-nier/6/Model-Cards-for-Responsible-AI-Stop-Carding-Start-Modelling",
+    },
+];

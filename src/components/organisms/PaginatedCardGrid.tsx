@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Pagination, useDisclosure } from "@nextui-org/react";
 import { ProjectCard } from "../molecules/ProjectCard";
 import { Project } from "../../types/Project";
@@ -9,8 +9,9 @@ interface PaginatedCardGridProps {
 }
 
 export function PaginatedCardGrid({ cards }: PaginatedCardGridProps) {
-    const [hovered, setHovered] = useState<number | null>(null);
+    const [, setHovered] = useState<number | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
+    const gridRef = useRef<HTMLDivElement>(null);
     
     // Modal state
     const {isOpen, onOpen, onClose} = useDisclosure();
@@ -37,14 +38,13 @@ export function PaginatedCardGrid({ cards }: PaginatedCardGridProps) {
     const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
 
     return (
-        <div className="flex flex-col items-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto p-4 w-full">
+        <div className="flex flex-col items-center" ref={gridRef}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto p-4 w-full min-h-[500px]">
                 {currentProjects.map((card, index) => (
                     <ProjectCard
                         key={card.title}
                         card={card}
                         index={index}
-                        hovered={hovered}
                         setHovered={setHovered}
                         onPress={handleProjectPress}
                     />
@@ -56,7 +56,13 @@ export function PaginatedCardGrid({ cards }: PaginatedCardGridProps) {
                     aria-label={"Projects Pagination"}
                     total={totalPages}
                     initialPage={currentPage}
-                    onChange={(page) => setCurrentPage(page)}
+                    onChange={(page) => {
+                        setCurrentPage(page);
+                        if (gridRef.current) {
+                            const y = gridRef.current.getBoundingClientRect().top + window.scrollY - 100;
+                            window.scrollTo({ top: y, behavior: "smooth" });
+                        }
+                    }}
                     showControls
                     className="gap-2"
                     color={"primary"}

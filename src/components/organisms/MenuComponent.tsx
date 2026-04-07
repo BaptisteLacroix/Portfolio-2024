@@ -38,7 +38,7 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
     ];
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed shadow-lg bg-white dark:bg-gray-900 px-6 md:px-12">
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="fixed z-[999] shadow-lg bg-white dark:bg-gray-900 px-6 md:px-12">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}

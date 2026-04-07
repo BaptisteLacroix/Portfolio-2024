@@ -12,7 +12,7 @@ export const CategoryTabs = <T extends string>({
     onCategoryChange,
 }: CategoryTabsProps<T>) => {
     return (
-        <div className="flex mt-6 space-x-4">
+        <div className="flex flex-wrap justify-center gap-3 mt-6 pb-2">
             {tabs.map((tab) => (
                 <Button
                     key={tab}

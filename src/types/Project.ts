@@ -13,4 +13,5 @@ export interface Project {
     githubUrl?: string;
     liveUrl?: string;
     languages: ProjectLanguage[];
+    featured?: boolean;
 }

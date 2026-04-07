@@ -7,12 +7,11 @@ import { Project } from "../../types/Project";
 export interface ProjectCardProps {
     card: Project;
     index: number;
-    hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
     onPress: (project: Project) => void;
 }
 
-export const ProjectCard = React.memo(({ card, index, hovered, setHovered, onPress }: ProjectCardProps) => {
+export const ProjectCard = React.memo(({ card, index, setHovered, onPress }: ProjectCardProps) => {
     const { t } = useTranslation();
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -33,37 +32,27 @@ export const ProjectCard = React.memo(({ card, index, hovered, setHovered, onPre
             transition={{ duration: 0.6, ease: "easeOut" }}
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
-            onClick={() => onPress(card)}
-            className={`cursor-pointer dark:border-1 dark:border-amber-50 rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out ${hovered !== null && hovered !== index ? "blur-sm scale-[0.98]" : ""}`}
+            onTap={() => onPress(card)}
+            className="cursor-pointer group dark:border-1 dark:border-amber-50 rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all duration-300 ease-out"
         >
+            {card.featured && (
+                <div className="absolute top-2 right-2 z-50 bg-blue-600/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg backdrop-blur-sm shadow-blue-500/30 flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+                        <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                    </svg>
+                    Featured
+                </div>
+            )}
             <img
                 src={card.img}
                 alt={t(card.title)}
-                className={`object-cover absolute inset-0 w-full h-full hover:scale-100 ${hovered === index ? "scale-110" : ""} transition-transform duration-300 ease-out`}
+                className="object-cover absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-300 ease-out"
             />
             {/* Title Overlay */}
             <div
-                className="absolute w-full bottom-0 p-3 bg-black/60 text-white font-bold text-xl md:text-2xl transition-opacity duration-300 z-50"
-                style={{ opacity: hovered === index ? 1 : 0.9 }}
+                className="absolute w-full bottom-0 p-3 bg-black/60 text-white font-bold text-xl md:text-2xl transition-opacity duration-300 z-50 group-hover:opacity-100 opacity-90"
             >
                 {t(card.title)}
-            </div>
-            <div
-                className={`absolute inset-0 bg-black/50 flex py-8 px-4 transition-opacity duration-300 ${hovered === index ? "opacity-100" : "opacity-0"}`}
-            >
-                <div
-                    className="text-lg md:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200"
-                >
-                    {/* Show languages on hover */}
-                    <ul>
-                        {card.languages.map((language, idx) => (
-                            <li className={'flex flex-row mr-5 mt-5 mb-5'} key={idx}>
-                                {language.logo}
-                                <span className={"ml-2"}>{language.name}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
             </div>
         </motion.div>
     );

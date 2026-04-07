@@ -1,7 +1,7 @@
 {
     "home": {
         "hello": "Salut, je suis Baptiste Lacroix",
-        "description": "💬 Je suis en alternance chez Airbus Defense and Space et étudiant à Polytech Nice Sophia",
+        "description": "Étudiant en école d'ingénieurs à Polytech Nice Sophia, je suis actuellement en alternance chez Airbus Defense and Space. J'aime toucher à tout, que ce soit pour créer des langages de programmation sur mesure ou mettre en place des solutions avec de l'IA. Je suis activement à la recherche d'un poste d'Ingénieur Logiciel où je pourrai écrire du code de qualité, travailler en équipe et résoudre de vrais problèmes techniques.",
         "hireMe": "Embauchez-moi !",
         "visitLinkedin": "Visitez mon Linkedin",
         "jobStatus": "À la recherche d'un poste d'ingénieur logiciel !",
@@ -18,6 +18,7 @@
         "description": "Ici, vous pouvez explorer une collection de mes projets personnels et éducatifs. Ces projets reflètent ma passion pour l'apprentissage et l'innovation, où j'ai appliqué de nouvelles technologies et résolu des problèmes stimulants. Chaque projet illustre ma capacité à traduire des connaissances théoriques en solutions pratiques, démontrant mes compétences en développement logiciel."
     },
     "projects_desc": {
+        "slidedeckml": "Ce projet consiste à concevoir et implémenter un langage spécifique (DSL) permettant de créer des présentations interactives à l’aide d’une syntaxe simple inspirée de Markdown. L’objectif était de rendre la création de slides plus intuitive pour les développeurs et les étudiants, tout en offrant des fonctionnalités avancées comme les animations, l’exécution de code, les quiz et l’intégration de contenus multimédias.\n\nNous avons développé tout un écosystème autour du langage : un compilateur générant des présentations HTML autonomes basées sur reveal.js, une CLI pour le développement avec aperçu en temps réel, ainsi qu’un éditeur web avec rendu instantané. Le résultat est une solution portable et orientée développeur, qui simplifie la création de présentations dynamiques.",
         "thermoscanai": "1ère Place, Projet Pluri-Disciplinaire (plus de 20 équipes).\n\nThermoScanAI combine des drones autonomes et l'Intelligence Artificielle (CNN U-Net, LLM multimodal) pour détecter et surveiller les îlots de chaleur urbains.\n\nEn remplaçant l'imagerie satellite par des survols de drones récurrents, notre solution offre une cartographie thermique avec une précision centimétrique. Le moteur d'IA suit l'évolution des températures au fil du temps et propose automatiquement aux villes les interventions urbaines les plus efficaces (ex. toitures végétalisées, désimperméabilisation) pour optimiser le rafraîchissement urbain, avec une estimation du ROI et de l'impact environnemental.\n\nMembre actif sur l'ensemble du cycle de projet : définition du besoin, conception de l'architecture, analyse des coûts et présentation du business plan aux jurys.",
         "serveurless": "Durant le 1er semestre de ma 3ème année de cycle ingénieur, j'ai travaillé dans une équipe de 5 personnes pour réaliser une application web nommée Serveurless. C'est une application de borne de commmande pour restauration rapide qui permet aux clients de passer commande et de payer sans interaction humaine.\n\nUn backend minimal nous a été fourni, nous avons eu à développer un backend for frontend pour intégrer les fonctionnalités manquantes en Node.js avec Express et une interface utilisateur en React. Un maximum de composants réutilisables ont été développés pour faciliter l'évolution future de l'application. Nous devions porter une attention particulière à l'ajout de filtres selon les régimes alimentaires, à la capacité de personnalisation de chaque plat et l'intégration d'un moyen pour permettre à plusieurs clients de commander ensemble tout en leur permettant de payer chacun leur part séparément.\n\nL'application permet de naviguer dans le menu, personnaliser les plats, ajouter des articles au panier, et finaliser la commande avec un paiement détaillé.",
         "healthtracker": "Durant le 1er semestre de ma 3ème année de cycle ingénieur, nous avons réalisé un système de suivi de santé à domicile pour les personnes âgées.\n\nEn équipe de 5, nous avons conçu une solution complète permettant de mesurer et transmettre automatiquement différents paramètres physiologiques (poids, pouls, température, nombre de pas) aux acteurs concernés : médecins, infirmiers et proches.\n\nLe système s'appuie sur une architecture IoT à trois niveaux : des dispositifs connectés (montres, balance), une station IoT Gateway locale avec une pipeline de traitement basée sur NATS, et des services cloud pour le stockage persistant. La station collecte les données via Bluetooth, les traite localement et les synchronise avec le cloud via une API REST développée avec Node.js et TypeScript.\n\nCe projet inclut également un système d'alertes automatiques pour les médecins en cas d'anomalies, des notifications hebdomadaires pour les proches via Discord, et une interface web permettant aux professionnels de santé de consulter les données depuis une base PostgreSQL.",
@@ -58,22 +59,30 @@
         },
         "work": {
             "mcmaster": {
-                "role": "CDD d'été - Assistant de Recherche II",
-                "description": "Travail sur le développement et l'amélioration du logiciel JPipe‑Runner pour les pipelines d'exécution et de tests automatisés. Recherche sur la Modélisation d'Objectifs pour représenter et analyser formellement les propriétés FATES.",
-                "years": "4 mois - 2026"
+                "role": "CDD - Assistant de Recherche",
+                "description": "Développement et maintenance de JpipeRunner, un outil Python pour l'orchestration de pipelines de données. Amélioration de l'automatisation des tests et garantie de 100% de reproductibilité des flux de recherche sous environnements Linux. Collaboration avec une équipe internationale sur des sujets pointus en IA et génie logiciel.",
+                "years": "Mai 2025 - Août 2025"
             },
             "airbus": {
-                "role": "Apprenti - Ingénieur Logiciel",
-                "description": "En apprentissage en tant qu'ingénieur logiciel chez Airbus Defense and Space, spécialisé en développement logiciel."
+                "role": "Alternance - Développeur Logiciel",
+                "description": "Migration web d'une application existante, augmentant l'accessibilité. Conception d'APIs RESTful fluides et évolutives. Ingénierie et automatisation de processus cloud en Go sur GCP, réduisant les coûts d'infrastructure et optimisant l'efficacité de déploiement."
             },
             "busit": {
-                "role": "Stage d'été - Développeur Logiciel",
-                "description": "Stage en tant que développeur full stack chez Busit SAS, spécialisé en développement web.",
-                "years": "4 mois - 2023"
+                "role": "Stage - Développeur Fullstack",
+                "description": "Création d'outils et de nouvelles fonctionnalités pour l'application interne via Python (IA), PHP, TypeScript et React.",
+                "years": "Avr 2023 - Août 2023"
+            }
+        },
+        "publications": {
+            "model_cards": {
+                "role": "Model Cards for Responsible AI: Stop Carding, Start Modelling\nICSE 2026 - New Ideas and Emerging Results (NIER)",
+                "description": "Les modèles d'Intelligence Artificielle et d'Apprentissage Automatique sont de plus en plus déployés dans des systèmes qui, sans être critiques pour la sécurité en soi, peuvent potentiellement causer des préjudices.\nDans cet article, nous proposons d'intégrer des méthodes d'ingénierie issues de la sûreté des systèmes (modèles d'argumentation, de justification) dans la sécurité de l'IA, afin de fournir un retour immédiat aux développeurs lorsque des preuves viennent contredire leurs affirmations de sécurité.\n\nAuteurs : Kalvin Thuan-Phong Khuu, Nicolas Lacroix, Baptiste Lacroix, Richard Paige, Mireille Blay-Fornarino, Sébastien Mosser",
+                "years": "Août 2026"
             }
         }
     },
     "projects": {
+        "slidedeckml": "SlideDeckML",
         "thermoscanai": "ThermoScanAI",
         "serveurless": "Serveurless",
         "healthtracker": "HealthTracker",
@@ -92,9 +101,9 @@
         "labyrinth": "Générateur de Labyrinthe"
     },
     "aboutMe": {
-        "text1": "💬 Je m'appelle Baptiste, j'ai {{age}} ans, je suis Franco-Canadien et je vis en France.",
-        "text2": "Je poursuis actuellement mes études en informatique à Polytech Nice Sophia tout en travaillant comme Développeur Full Stack chez Airbus Defense and Space. Ma passion pour la technologie et la résolution de problèmes me pousse à apprendre continuellement et à innover en développement logiciel.",
-        "text3": "J'aime relever des défis sur des projets stimulants, qu'ils soient académiques ou personnels, où je peux appliquer mes compétences en Python et d'autres langages de programmation."
+        "text1": "Salut, c'est Baptiste ! J'ai {{age}} ans, je suis franco-canadien et je vis en France.",
+        "text2": "Je termine mon école d'ingénieurs en informatique à Polytech Nice Sophia, tout en travaillant comme apprenti chez Airbus Defense and Space. J'aime comprendre comment les choses fonctionnent sous le capot, écrire du code propre et réfléchir à l'architecture logicielle.",
+        "text3": "Je recherche un poste d'Ingénieur Logiciel où je pourrai relever des défis algorithmiques intéressants, créer des applications qui tiennent la charge et continuer à progresser techniquement."
     },
     "typing": {
         "prefix": "Je suis ",

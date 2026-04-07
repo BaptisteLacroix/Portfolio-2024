@@ -34,7 +34,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                         </ModalHeader>
                         <ModalBody className="py-6">
                             {/* Main Image */}
-                            <div className="w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden mb-4 relative">
+                            <div className="w-full shrink-0 h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden mb-4 relative">
                                 <img
                                     src={project.img}
                                     alt={t(project.title)}

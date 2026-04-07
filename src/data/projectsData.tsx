@@ -19,10 +19,24 @@ import { Project } from "../types/Project";
 
 export const projects: Project[] = [
     {
+        title: 'projects.slidedeckml',
+        img: './portfolio/slidedeckml/slidedeckml.webp',
+        githubUrl: 'https://github.com/BaptisteLacroix/sse-dsl-SlideDeckML',
+        descriptionKey: 'projects_desc.slidedeckml',
+        featured: true,
+        languages: [
+            {name: 'Typescript', logo: <TypescriptIcon/>},
+            {name: 'Javascript', logo: <JavascriptIcon/>},
+            {name: 'HTML', logo: <HtmlIcon/>},
+            {name: 'CSS', logo: <CssIcon/>}
+        ]
+    },
+    {
         title: 'projects.thermoscanai',
         img: './portfolio/thermoscanai/thermoscanai.webp',
         liveUrl: 'https://thermoscan.theo-vidal.fr',
         descriptionKey: 'projects_desc.thermoscanai',
+        featured: true,
         languages: []
     },
         {
@@ -30,6 +44,7 @@ export const projects: Project[] = [
         img: './portfolio/healthtracker/healthtracker.webp',
         githubUrl: 'https://github.com/Antoine-FdRg/HealthTracker',
         descriptionKey: 'projects_desc.healthtracker',
+        featured: true,
         languages: [
             {name: 'Node.js', logo: <JavascriptIcon/>},
             {name: 'Typescript', logo: <TypescriptIcon/>},

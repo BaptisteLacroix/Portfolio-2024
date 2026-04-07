@@ -1,7 +1,7 @@
 {
     "home": {
         "hello": "Hey I'm Baptiste Lacroix",
-        "description": "💬 I’m in work-study at Airbus Defense and Space and studying at Polytech Nice Sophia",
+        "description": "I'm a software engineering student at Polytech Nice Sophia, currently working as an apprentice at Airbus Defense and Space. I enjoy getting my hands dirty with everything from building custom programming languages to setting up AI-driven tools. I'm actively looking for a Software Engineering position where I can write solid code, learn from a great team, and solve real technical problems.",
         "hireMe": "Hire Me !",
         "visitLinkedin": "Visit my Linkedin",
         "jobStatus": "Looking for a Software Engineering position!",
@@ -18,6 +18,7 @@
         "description": "Here, you can explore a collection of my personal and educational projects. These projects reflect my passion for learning and innovation, where I have applied new technologies and solved challenging problems. Each project showcases my ability to translate theoretical knowledge into practical solutions, demonstrating my skills in software development and problem-solving, whether in academic settings or self-initiated endeavors."
     },
     "projects": {
+        "slidedeckml": "SlideDeckML",
         "thermoscanai": "ThermoScanAI",
         "serveurless": "Serveurless",
         "healthtracker": "HealthTracker",
@@ -36,6 +37,7 @@
         "labyrinth": "Maze Generator"
     },
     "projects_desc": {
+        "slidedeckml": "This project consists of designing and implementing a custom Domain-Specific Language (DSL) to create interactive presentation slides in a simple, Markdown-like syntax. The goal was to make slide creation more intuitive for developers and students, while still supporting advanced features like animations, code execution, quizzes, and multimedia integration.\n\nWe built a full toolchain around the language, including a compiler that generates standalone HTML presentations powered by reveal.js, a CLI for development and live preview, and a web editor with real-time rendering. The result is a portable and developer-friendly solution that bridges the gap between writing content and building dynamic presentations.",
         "thermoscanai": "1st Place, Interdisciplinary Project Challenge (20+ teams).\n\nThermoScanAI combines autonomous drones and Artificial Intelligence (U-Net CNNs, Multimodal LLMs) to detect and monitor urban heat islands. \n\nInstead of relying on low-resolution satellite imagery, our solution uses recurring drone flights to generate centimeter-level thermal mapping. The AI engine tracks temperature deviations over time and automatically prescribes the most effective urban interventions (e.g., green roofs, surface material changes) to optimize city cooling, complete with ROI and environmental impact estimates.\n\nActive in the full project lifecycle: problem definition, architecture design, cost analysis, and pitching to stakeholders.",
         "serveurless": "During the 1st semester of my 3rd year in the engineering cycle, I worked in a team of 5 people to build a web application named Serveurless. It is a fast-food ordering kiosk application that allows customers to place orders and pay without human interaction.\n\nGiven a minimal backend provided to us, we developed a backend-for-frontend in Node.js (with Express) to integrate the missing features, along with a user interface in React. A maximum of reusable components were developed to facilitate future evolution of the application. We paid particular attention to adding dietary filters, the ability to customize each dish, and integrating a feature allowing multiple customers to order together while splitting the bill so each can pay their share separately.\n\nThe application allows navigating the menu, customizing dishes, adding items to the cart, and finalizing the order with a detailed payment breakdown.",
         "healthtracker": "During the 1st semester of my 3rd year in the engineering cycle, we created a home health monitoring system for the elderly.\n\nIn a team of 5, we designed a complete solution to automatically measure and transmit physiological parameters (weight, pulse, temperature, step count) to doctors, nurses, and relatives.\n\nThe system relies on a 3-tier IoT architecture: Bluetooth connected devices, a local IoT Gateway with a processing pipeline based on NATS, and cloud services for persistent storage via a Node.js/TypeScript REST API.\n\nThis project also includes automatic alerts for doctors in case of anomalies, weekly Discord notifications for relatives, and a web interface allowing healthcare professionals to consult patient data stored on a PostgreSQL database.",
@@ -76,25 +78,32 @@
         },
         "work": {
             "mcmaster": {
-                "role": "Summer Fixed-Term Contract - Research Assistant II",
-                "description": "Worked on the development and enhancement of the JPipe‑Runner software for automated execution and testing pipelines. Conducted research on Goal Modeling to formally represent and analyze FATES properties.",
-                "years": "4 month - 2026"
+                "role": "Fixed-term Contract - Research Assistant",
+                "description": "Developed and maintained JpipeRunner, a Python-based tool orchestrating data pipelines. Improved check automation and ensured 100% reproducibility of research workflows across Linux environments. Collaborated with an international research team on advanced AI and SE topics.",
+                "years": "May 2025 - August 2025"
             },
             "airbus": {
-                "role": "Apprentice - Software Engineer",
-                "description": "Working as an apprentice software engineer at Airbus Defense and Space, specializing in software development."
+                "role": "Work-Study Program - Software Developer",
+                "description": "Migration of a legacy application to a web-based architecture, improving user accessibility. Designed robust RESTful APIs to streamline service integration. Engineered automated Go-based cloud workflows on GCP, reducing operational infrastructure costs and cutting deployment times."
             },
             "busit": {
-                "role": "Summer Internship - Software Developer",
-                "description": "Internship as a full stack developer at Busit SAS, specializing in web development.",
-                "years": "4 month - 2023"
+                "role": "Internship - Fullstack Developer",
+                "description": "Built scalable tools and new features for the internal application using Python (AI), PHP, TypeScript, and React.",
+                "years": "Apr 2023 - Aug 2023"
+            }
+        },
+        "publications": {
+            "model_cards": {
+                "role": "Model Cards for Responsible AI: Stop Carding, Start Modelling\nICSE 2026 - New Ideas and Emerging Results (NIER)",
+                "description": "Artificial intelligence and Machine Learning models are increasingly deployed in systems, which, despite not being safety-critical per se, may ultimately harm people.\nIn this paper, we propose to pull engineering methods (argumentation model, templates and operations) coming from system safety into AI Safety to provide immediate feedback to AI developers when concrete evidence stops supporting their safety claims.\n\nAuthors: Kalvin Thuan-Phong Khuu, Nicolas Lacroix, Baptiste Lacroix, Richard Paige, Mireille Blay-Fornarino, Sébastien Mosser",
+                "years": "Aug 2026"
             }
         }
     },
     "aboutMe": {
-        "text1": "💬 My name is Baptiste, I'm {{age}}, I'm Franco-Canadian, and I live in France.",
-        "text2": "I am currently pursuing my studies in computer science at Polytech Nice Sophia while working as a Full Stack Developer at Airbus Defense and Space. My passion for technology and problem-solving drives me to continually learn and innovate in software development.",
-        "text3": "I enjoy tackling challenging projects, whether academic or personal, where I can apply my skills in Python and other programming languages."
+        "text1": "Hi, I'm Baptiste! I'm a {{age}}-year-old Franco-Canadian software developer based in France.",
+        "text2": "I'm in my final year of a Master's in Computer Engineering at Polytech Nice Sophia, and I work part-time as an apprentice at Airbus Defense and Space. I really like figuring out how things work under the hood, writing clean code, and making sure the architecture makes sense.",
+        "text3": "I'm looking for a Software Engineering role where I can tackle interesting algorithmic challenges, build things that actually scale, and keep growing as a developer."
     },
     "typing": {
         "prefix": "I am ",
