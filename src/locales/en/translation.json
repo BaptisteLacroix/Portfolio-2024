@@ -64,8 +64,11 @@
         "formation": "Formation",
         "portfolio": "Portfolio",
         "skills": "Skills"
-    },
-    "experience": {
+    },    "educationCard": {
+        "title": "Education & Experience",
+        "studentStatus": "Final year Master's student in Computer Engineering at Polytech Nice Sophia.",
+        "airbusStatus": "Software Engineer Apprentice at Airbus Defense and Space."
+    },    "experience": {
         "education": {
             "polytech": {
                 "role": "Master's degree - In computer engineering",

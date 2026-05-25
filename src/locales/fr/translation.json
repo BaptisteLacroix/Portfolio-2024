@@ -46,6 +46,11 @@
         "portfolio": "Portfolio",
         "skills": "Compétences"
     },
+    "educationCard": {
+        "title": "Éducation & Expérience",
+        "studentStatus": "Étudiant en dernière année de Master en Ingénierie Informatique à Polytech Nice Sophia.",
+        "airbusStatus": "Ingénieur Logiciel en alternance chez Airbus Defense and Space."
+    },
     "experience": {
         "education": {
             "polytech": {
