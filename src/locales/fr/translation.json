@@ -69,7 +69,7 @@
             },
             "busit": {
                 "role": "Stage - Développeur Fullstack",
-                "description": "Création d'outils et de nouvelles fonctionnalités pour l'application interne via Python (IA), PHP, TypeScript et React.",
+                "description": "Création de widgets de data-visualisation (React/TypeScript) et de blocs logiques (PHP) pour les workflows automatisés d'une plateforme B2B de monitoring industriel. Intégration d'une IA prédictive en Python pour l'anticipation d'alertes.",
                 "years": "Avr 2023 - Août 2023"
             }
         },

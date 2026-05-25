@@ -88,7 +88,7 @@
             },
             "busit": {
                 "role": "Internship - Fullstack Developer",
-                "description": "Built scalable tools and new features for the internal application using Python (AI), PHP, TypeScript, and React.",
+                "description": "Developed data visualization widgets (React/TypeScript) and PHP backend components for automated workflows on a B2B industrial monitoring platform. Integrated a Python-based predictive AI to anticipate system alerts.",
                 "years": "Apr 2023 - Aug 2023"
             }
         },
