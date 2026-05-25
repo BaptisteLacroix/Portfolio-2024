@@ -65,16 +65,33 @@
         "work": {
             "mcmaster": {
                 "role": "CDD - Assistant de Recherche",
-                "description": "Développement et maintenance de JpipeRunner, un outil Python pour l'orchestration de pipelines de données. Amélioration de l'automatisation des tests et garantie de 100% de reproductibilité des flux de recherche sous environnements Linux. Collaboration avec une équipe internationale sur des sujets pointus en IA et génie logiciel.",
+                "description": "Conception et développement de jpipe-runner, le moteur d'exécution automatisé de jPipe (un DSL dédié aux workflows de validation des systèmes logiciels et IA).",
+                "details": [
+                    "Architecture Logicielle & Moteur : Conception et implémentation en Python incluant l'analyse syntaxique (parsing) complète des fichiers .jd.",
+                    "Orchestration et Visualisation : Gestion des résolutions de dépendances, de l'ordonnancement d'exécution et du rendu Graphviz.",
+                    "CLI et Systèmes : Création d'une CLI sur-mesure pour injection de paramètres d'exécution, gestion modulaire des scripts et traitement d'erreurs.",
+                    "DevOps et Packagings industriels : Déploiement multi-plateformes et édition CI/CD continue via PyPI, Ubuntu Launchpad et macOS Homebrew."
+                ],
                 "years": "Mai 2025 - Août 2025"
             },
             "airbus": {
-                "role": "Alternance - Développeur Logiciel",
-                "description": "Migration web d'une application existante, augmentant l'accessibilité. Conception d'APIs RESTful fluides et évolutives. Ingénierie et automatisation de processus cloud en Go sur GCP, réduisant les coûts d'infrastructure et optimisant l'efficacité de déploiement."
+                "role": "Alternance - Ingénieur Logiciel",
+                "description": "Pilotage de la modernisation architecturale d'outils internes et conception d'APIs RESTful scalables. Ingénierie Cloud (GCP) et développement de workflows en Go.",
+                "details": [
+                    "Architecture & Modernisation : Refonte d'une application existante vers une architecture distribuée moderne et propre.",
+                    "Ingénierie Backend & APIs : Modélisation et implémentation d'APIs RESTful fluides, sécurisées et performantes.",
+                    "Ingénierie Cloud & Automatisation : Processus cloud-native en Go (Golang) sur Google Cloud Platform (GCP).",
+                    "Démarche DevOps & FinOps : Validation et optimisation de l'infrastructure réduisant structurellement les coûts et accélérant les cycles de déploiement."
+                ]
             },
             "busit": {
                 "role": "Stage - Développeur Fullstack",
-                "description": "Création de widgets de data-visualisation (React/TypeScript) et de blocs logiques (PHP) pour les workflows automatisés d'une plateforme B2B de monitoring industriel. Intégration d'une IA prédictive en Python pour l'anticipation d'alertes.",
+                "description": "Développement sur une plateforme B2B de monitoring industriel et d'automatisation. Création de widgets (React/TypeScript) et de scénarios IA prédictifs.",
+                "details": [
+                    "Développement Front-End : Création de nouveaux widgets d'interface en React / TS pour des tableaux de bord Temps Réel.",
+                    "Développement Back-End : Programmation PHP pour les composants logiques et orchestrateurs de workflows.",
+                    "Implémentation d'IA Prédictive : Modèles Machine Learning en Python exploitant la data pour des cas de maintenance prédictive"
+                ],
                 "years": "Avr 2023 - Août 2023"
             }
         },

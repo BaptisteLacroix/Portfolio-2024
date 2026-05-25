@@ -1,14 +1,16 @@
-import { Card, CardBody } from "@nextui-org/react";
-import { motion } from "framer-motion";
+import { Card, CardBody, Button } from "@nextui-org/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 export interface ExperienceCardProps {
     icon: React.ReactNode;
     title: string;
     role: string;
     description: string;
+    details?: string;
     years: string;
     countryFlagIcon: React.ReactNode;
     url?: string;
@@ -19,6 +21,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
     title, 
     role, 
     description, 
+    details,
     years, 
     countryFlagIcon, 
     url,
@@ -28,6 +31,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
         triggerOnce: true,
         threshold: 0.8,
     });
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -57,6 +61,62 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                     <p className="text-md text-gray-600 dark:text-blue-500 whitespace-pre-wrap">{t(role)}</p>
                     <p className="text-gray-500 mt-2 dark:text-white whitespace-pre-wrap">{t(description)}</p>
                     
+                    {details && (
+                        <>
+                            <div className="mt-3 flex justify-start">
+                                <Button 
+                                    size="sm" 
+                                    variant="light" 
+                                    color="primary"
+                                    onClick={() => setIsExpanded(!isExpanded)}
+                                    endContent={
+                                        <motion.div
+                                            animate={{ rotate: isExpanded ? 180 : 0 }}
+                                            transition={{ duration: 0.3 }}
+                                        >
+                                            <ChevronDownIcon className="w-4 h-4" />
+                                        </motion.div>
+                                    }
+                                >
+                                    {isExpanded ? t("common.showLess", "Show less") : t("common.showMore", "Read more")}
+                                </Button>
+                            </div>
+                            <AnimatePresence>
+                                {isExpanded && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: "auto" }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        className="overflow-hidden"
+                                    >
+                                        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                            <ul className="text-gray-500 text-sm dark:text-gray-300 list-disc list-outside ml-4 space-y-2">
+                                                {t(details, { returnObjects: true }) instanceof Array
+                                                    ? (t(details, { returnObjects: true }) as string[]).map((detail, idx) => (
+                                                        <li key={idx}>
+                                                            {detail.includes(':') ? (
+                                                                <>
+                                                                    <strong className="text-gray-700 dark:text-gray-300">
+                                                                        {detail.split(':')[0]}:
+                                                                    </strong>
+                                                                    {detail.split(':')[1]}
+                                                                </>
+                                                            ) : (
+                                                                detail
+                                                            )}
+                                                        </li>
+                                                    ))
+                                                    : <p className="whitespace-pre-wrap leading-relaxed">{t(details)}</p>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </>
+                    )}
+
                     {url && (
                         <div className="mt-4">
                             <a 

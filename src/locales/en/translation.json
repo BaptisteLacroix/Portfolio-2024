@@ -82,16 +82,33 @@
         "work": {
             "mcmaster": {
                 "role": "Fixed-term Contract - Research Assistant",
-                "description": "Developed and maintained JpipeRunner, a Python-based tool orchestrating data pipelines. Improved check automation and ensured 100% reproducibility of research workflows across Linux environments. Collaborated with an international research team on advanced AI and SE topics.",
+                "description": "Designed and developed jpipe-runner, the execution engine for the jPipe platform (a DSL for modeling validation workflows for software and AI systems). Focused on software engineering and DevOps, from architecture to global distribution.",
+                "details": [
+                    "Engine Architecture & Development: Designed and implemented the jpipe-runner execution engine in Python with parsing mechanisms for .jd files.",
+                    "Workflow Orchestration: Implemented dependency management, execution scheduling, and Graphviz-based visualization.",
+                    "CLI & Integration: Created a configurable Command-Line Interface (CLI) supporting modular external Python integrations and runtime parameter injection.",
+                    "DevOps & Public Distribution: Designed CI/CD pipelines and managed releases through PyPI (pip), Linux Launchpad, and Homebrew."
+                ],
                 "years": "May 2025 - August 2025"
             },
             "airbus": {
-                "role": "Work-Study Program - Software Developer",
-                "description": "Migration of a legacy application to a web-based architecture, improving user accessibility. Designed robust RESTful APIs to streamline service integration. Engineered automated Go-based cloud workflows on GCP, reducing operational infrastructure costs and cutting deployment times."
+                "role": "Work-Study Program - Software Engineer",
+                "description": "Spearheaded the architectural modernization of internal tools and designed scalable RESTful APIs. Engineered Go-based cloud workflows on GCP, driving DevOps automation.",
+                "details": [
+                    "Software Architecture & Modernization: Re-engineered a legacy application into a robust, modern web-based architecture.",
+                    "Backend Engineering & API Design: Modeled and implemented high-performance RESTful APIs.",
+                    "Cloud Engineering & Automation: Developed and deployed cloud-native workflows on GCP using Go (Golang).",
+                    "DevOps & FinOps Optimization: Audited and optimized existing cloud infrastructure, reducing costs and accelerating deployments."
+                ]
             },
             "busit": {
                 "role": "Internship - Fullstack Developer",
-                "description": "Developed data visualization widgets (React/TypeScript) and PHP backend components for automated workflows on a B2B industrial monitoring platform. Integrated a Python-based predictive AI to anticipate system alerts.",
+                "description": "Contributed to a B2B industrial monitoring and automation platform. Developed data visualization widgets (React/TypeScript) and integrated a Python-based predictive AI.",
+                "details": [
+                    "Front-End Development: Built new UI widgets using React and TypeScript for real-time factory metrics.",
+                    "Back-End Development: Programmed backend logical blocks and connectors in PHP to manage complex workflows.",
+                    "Predictive AI Modeling: Designed and trained Machine Learning models in Python to predict anomalies and energy usage."
+                ],
                 "years": "Apr 2023 - Aug 2023"
             }
         },
